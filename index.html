@@ -14,10 +14,11 @@
 <body>
     <header class="container-fluid text-center py-5">
         <h1>Benvenuto nel mio sito!</h1>
+        <p>Scopri i miei progetti e le mie competenze nel mondo dello sviluppo web.</p>
     </header>
 
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid d-flex flex-column min-vh-100">
+        <div class="row flex-grow-1">
             <!-- Barra Laterale -->
             <nav class="col-md-2 sidebar">
                 <ul class="nav flex-column">
@@ -31,6 +32,9 @@
                         <a href="#projects" class="nav-link" onclick="loadPage('projects')">Progetti</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#skills" class="nav-link" onclick="loadPage('skills')">Competenze</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a>
                     </li>
                 </ul>
@@ -41,13 +45,13 @@
                 <div id="content" class="mt-4 fadeIn"></div>
             </main>
         </div>
-    </div>
 
-    <footer class="container-fluid text-center py-4 mt-5">
-        <p>© 2024 Simone Ascione Website - Tutti i diritti riservati</p>
-        <a href="https://www.linkedin.com" class="text-white">LinkedIn</a> |
-        <a href="https://github.com" class="text-white">GitHub</a>
-    </footer>
+        <footer class="container-fluid text-center py-4">
+            <p>© 2024 Simone Ascione Website - Tutti i diritti riservati</p>
+            <a href="https://www.linkedin.com" class="text-white">LinkedIn</a> |
+            <a href="https://github.com" class="text-white">GitHub</a>
+        </footer>
+    </div>
 
     <!-- Modale per i progetti -->
     <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
@@ -110,6 +114,17 @@
                                     </div>
                                 </div>
                             </div>
+                        `;
+                        break;
+                    case 'skills':
+                        content.innerHTML = `
+                            <h2>Competenze</h2>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>Frameworks: React, Bootstrap</li>
+                                <li>Backend: Node.js, Express</li>
+                                <li>Database: MongoDB, SQL</li>
+                            </ul>
                         `;
                         break;
                     case 'contact':
