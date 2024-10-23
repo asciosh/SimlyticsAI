@@ -68,12 +68,15 @@ header button {
     font-weight: bold;
     padding: 15px;
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar .nav-link:hover {
     background-color: #28a745; /* Cambiato in verde */
-    color: #fff;
-    border-radius: 5px;
+}
+
+.sidebar .nav-link.active {
+    background-color: #28a745; /* Colore per il link attivo */
 }
 
 /* Main content */
