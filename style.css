@@ -1,158 +1,160 @@
-    <style>
-        /* Stile di base */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease;
-        }
+/* Stile di base */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
 
-        h1,
-        h2 {
-            color: #0d6efd;
-        }
+/* Stile del header */
+header {
+    background-color: #00a86b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
-        header {
-            background-color: #00a86b;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
+h1,
+h2 {
+    color: #0d6efd;
+}
 
-        /* Barra Laterale */
-        .sidebar {
-            position: fixed;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            background-color: #f8f9fa;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            transition: width 0.3s ease;
-            width: 250px; /* Larghezza iniziale */
-        }
+/* Barra Laterale */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #f8f9fa;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+    width: 250px; /* Larghezza iniziale */
+}
 
-        .sidebar:hover {
-            width: 300px; /* Larghezza al passaggio del mouse */
-        }
+.sidebar:hover {
+    width: 300px; /* Larghezza al passaggio del mouse */
+}
 
-        .sidebar .nav-link {
-            color: #000;
-            transition: background-color 0.3s ease, padding 0.3s ease;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-        }
+.sidebar .nav-link {
+    color: #000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
 
-        .sidebar .nav-link:hover {
-            background-color: #e9ecef;
-            padding-left: 30px; /* Effetto di espansione */
-        }
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    padding-left: 30px; /* Effetto di espansione */
+}
 
-        /* Sezioni */
-        section {
-            padding: 60px 20px;
-        }
+/* Sezioni */
+section {
+    padding: 60px 20px;
+}
 
-        footer {
-            background-color: #0d6efd;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+footer {
+    background-color: #0d6efd;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
 
-        a {
-            color: #00a86b;
-            text-decoration: none;
-        }
+a {
+    color: #00a86b;
+    text-decoration: none;
+}
 
-        a:hover {
-            color: #005f3f;
-        }
+a:hover {
+    color: #005f3f;
+}
 
-        form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+/* Stile del modulo */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
-        input,
-        textarea {
-            border-radius: 5px;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            width: 100%;
-        }
+/* Input e textarea */
+input,
+textarea {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    width: 100%;
+}
 
-        button {
-            background-color: #00a86b;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+/* Pulsante */
+button {
+    background-color: #00a86b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        button:hover {
-            background-color: #005f3f;
-        }
+button:hover {
+    background-color: #005f3f;
+}
 
-        /* Animazioni */
-        .fadeIn {
-            animation: fadeIn 0.8s ease-in-out;
-        }
+/* Animazioni */
+.fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        /* Layout dei Progetti */
-        .card {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+/* Layout dei Progetti */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-        .card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .sidebar {
-                position: relative;
-                height: auto;
-                width: 100%; /* Larghezza per mobile */
-            }
+/* Media Queries */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        height: auto;
+        width: 100%; /* Larghezza per mobile */
+    }
 
-            .sidebar .nav-link {
-                text-align: center; /* Centra i link */
-            }
+    .sidebar .nav-link {
+        text-align: center; /* Centra i link */
+    }
 
-            section {
-                padding: 20px;
-            }
-        }
+    section {
+        padding: 20px;
+    }
+}
 
-        /* Modale */
-        .modal-header {
-            background-color: #00a86b;
-            color: white;
-        }
+/* Modale */
+.modal-header {
+    background-color: #00a86b;
+    color: white;
+}
 
-        .modal-body {
-            text-align: left;
-        }
-    </style>
+.modal-body {
+    text-align: left;
+}
