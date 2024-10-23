@@ -3,8 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f8f9fa;
     color: #333;
+}
+
+h1, h2 {
+    color: #007bff;
 }
 
 header {
@@ -16,6 +20,7 @@ header {
 
 nav ul {
     list-style-type: none;
+    margin-top: 15px;
     margin: 0;
     padding: 0;
     display: flex;
@@ -38,12 +43,13 @@ section {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in-out;
 }
 
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #333;
+    background-color: #007bff;
     color: white;
 }
 
@@ -56,12 +62,14 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 input, textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 10px;
     border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -71,6 +79,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
 }
 
 button:hover {
@@ -80,8 +89,4 @@ button:hover {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-section {
-    animation: fadeIn 1s ease-in-out;
 }
