@@ -60,7 +60,9 @@ header button {
 .sidebar {
     background-color: #343a40;
     height: 100vh;
+    width: 200px; /* Ridotto per rendere la sidebar più snella */
     padding: 20px 0;
+    position: sticky; /* Fissa la sidebar */
 }
 
 .sidebar .nav-link {
@@ -82,6 +84,7 @@ header button {
 /* Main content */
 main {
     padding: 20px;
+    flex-grow: 1; /* Permette al main di espandersi */
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -184,6 +187,7 @@ button.btn:hover {
 
     .sidebar {
         height: auto;
+        width: 100%; /* Rende la sidebar a piena larghezza in mobile */
         padding: 10px 0;
     }
 
