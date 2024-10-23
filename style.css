@@ -1,160 +1,194 @@
-/* Stile di base */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+/* Resetta alcuni stili di base */
+body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Stile del header */
+body {
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Modalità scura */
+body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+/* Contenitore principale */
+.container-fluid {
+    padding: 0;
+}
+
 header {
-    background-color: #00a86b;
+    background-color: #007bff;
     color: white;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 40px 0;
 }
 
-h1,
-h2 {
-    color: #0d6efd;
+header h1 {
+    font-size: 2.5rem;
 }
 
-/* Barra Laterale */
+header p {
+    font-size: 1.25rem;
+}
+
+header button {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+/* Sidebar */
 .sidebar {
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background-color: #f8f9fa;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease;
-    width: 250px; /* Larghezza iniziale */
-}
-
-.sidebar:hover {
-    width: 300px; /* Larghezza al passaggio del mouse */
+    background-color: #343a40;
+    height: 100vh;
+    padding: 20px 0;
 }
 
 .sidebar .nav-link {
-    color: #000;
-    transition: background-color 0.3s ease, padding 0.3s ease;
-    padding: 15px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.sidebar .nav-link:hover {
-    background-color: #e9ecef;
-    padding-left: 30px; /* Effetto di espansione */
-}
-
-/* Sezioni */
-section {
-    padding: 60px 20px;
-}
-
-footer {
-    background-color: #0d6efd;
-    color: white;
-    padding: 20px 0;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
     text-align: center;
 }
 
-a {
-    color: #00a86b;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #005f3f;
-}
-
-/* Stile del modulo */
-form {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Input e textarea */
-input,
-textarea {
+.sidebar .nav-link:hover {
+    background-color: #007bff;
+    color: #fff;
     border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    width: 100%;
 }
 
-/* Pulsante */
-button {
-    background-color: #00a86b;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Main content */
+main {
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-button:hover {
-    background-color: #005f3f;
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-/* Animazioni */
+main p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
 .fadeIn {
-    animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
     }
-
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
-/* Layout dei Progetti */
-.card {
-    transition: transform 0.2s, box-shadow 0.2s;
+/* Footer */
+#footer {
+    background-color: #007bff;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
 }
 
-.card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+#footer a {
+    color: white;
+    margin: 0 10px;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .sidebar {
-        position: relative;
-        height: auto;
-        width: 100%; /* Larghezza per mobile */
-    }
-
-    .sidebar .nav-link {
-        text-align: center; /* Centra i link */
-    }
-
-    section {
-        padding: 20px;
-    }
+#footer a:hover {
+    color: #ddd;
 }
 
-/* Modale */
-.modal-header {
-    background-color: #00a86b;
+#footer p {
+    margin-bottom: 0;
+}
+
+/* Modalità scura per il footer */
+body.dark-mode #footer {
+    background-color: #333;
+}
+
+body.dark-mode #footer a {
+    color: #bb86fc;
+}
+
+/* Pulsante Modalità Scura/Chiara */
+#toggleTheme {
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+
+#toggleTheme:hover {
+    color: #ddd;
+}
+
+/* Animazione smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Pulsante principale migliorato */
+button.btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.btn:hover {
+    background-color: #0056b3;
     color: white;
 }
 
-.modal-body {
-    text-align: left;
+/* Modalità mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .sidebar {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    #footer {
+        padding: 10px 0;
+    }
 }
