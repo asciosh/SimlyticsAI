@@ -42,6 +42,26 @@ nav ul li a:hover {
     color: #e0e0e0;
 }
 
+/* Barra Laterale */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #f8f9fa;
+}
+
+.sidebar .nav-link {
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+}
+
+/* Sezioni */
 section {
     padding: 60px 0;
 }
@@ -114,6 +134,16 @@ button:hover {
     }
 }
 
+/* Layout dei Progetti */
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -125,5 +155,19 @@ button:hover {
 
     body {
         font-size: 14px;
+    }
+
+    .sidebar {
+        position: relative;
+        height: auto;
+    }
+
+    .sidebar .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar .nav-item {
+        margin-bottom: 5px;
     }
 }
