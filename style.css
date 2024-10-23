@@ -1,10 +1,15 @@
 /* Stile di base */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 h1, h2 {
@@ -38,19 +43,13 @@ nav ul li a {
 }
 
 section {
-    padding: 2rem;
-    margin: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    animation: fadeIn 1s ease-in-out;
+    padding: 60px 0;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
+    padding: 20px 0;
 }
 
 a {
@@ -59,17 +58,13 @@ a {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #fff;
+    padding: 30px;
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 input, textarea {
-    padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
 }
 
 button {
@@ -99,4 +94,14 @@ button:hover {
   nav {
     flex-direction: column;
   }
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
 }
