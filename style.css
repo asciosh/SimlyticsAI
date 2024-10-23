@@ -1,10 +1,7 @@
 /* Stile di base */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
 }
 
 h1, h2 {
@@ -83,10 +80,20 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #444;
+  color: white;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  nav {
+    flex-direction: column;
+  }
 }
