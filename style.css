@@ -38,7 +38,7 @@ body.dark-mode a {
 }
 
 header {
-    background-color: #007bff;
+    background-color: #28a745; /* Cambiato in verde */
     color: white;
     padding: 40px 0;
 }
@@ -71,7 +71,7 @@ header button {
 }
 
 .sidebar .nav-link:hover {
-    background-color: #007bff;
+    background-color: #28a745; /* Cambiato in verde */
     color: #fff;
     border-radius: 5px;
 }
@@ -107,7 +107,7 @@ main p {
 
 /* Footer */
 #footer {
-    background-color: #007bff;
+    background-color: #28a745; /* Cambiato in verde */
     color: white;
     position: sticky;
     bottom: 0;
@@ -161,7 +161,7 @@ button.btn {
 }
 
 button.btn:hover {
-    background-color: #0056b3;
+    background-color: #218838; /* Cambiato in verde scuro */
     color: white;
 }
 
