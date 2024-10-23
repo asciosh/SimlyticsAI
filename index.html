@@ -1,43 +1,5 @@
 <!DOCTYPE html>
 <html lang="it">
-    
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        let name = document.getElementById('name').value;
-        let email = document.getElementById('email').value;
-        let message = document.getElementById('message').value;
-
-        if (name && email && message) {
-            // Invia il form
-            this.submit();
-            document.getElementById('formResult').innerText = "Messaggio inviato con successo!";
-        } else {
-            document.getElementById('formResult').innerText = "Per favore, compila tutti i campi.";
-        }
-    });
-
-    function loadPage(page) {
-        const content = document.getElementById('content');
-        switch(page) {
-            case 'home':
-                content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
-                break;
-            case 'about':
-                content.innerHTML = "<h2>Chi sono</h2><p>Sono un appassionato di sviluppo web.</p>";
-                break;
-            case 'contact':
-                content.innerHTML = `<h2>Contattami</h2><p>Email: tuamail@example.com</p>`;
-                break;
-            default:
-                content.innerHTML = "<h2>Errore</h2><p>Pagina non trovata.</p>";
-        }
-    }
-    
-    // Carica la home all'inizio
-    loadPage('home');
-</script>
-
 
 <head>
     <meta charset="UTF-8">
@@ -48,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-    
+
 <body>
-    <header class="container text-center py-5">
+    <header class="container-fluid text-center py-5">
         <h1>Benvenuto nel mio sito!</h1>
         <nav>
             <ul class="nav justify-content-center">
@@ -59,10 +21,10 @@
                 <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a></li>
             </ul>
         </nav>
-        <div id="content"></div>
+        <div id="content" class="mt-4"></div>
     </header>
 
-    <section id="about" class="container mt-5">
+    <section id="about" class="container mt-5 fadeIn">
         <div class="row">
             <div class="col-md-6">
                 <h2>Chi sono</h2>
@@ -71,11 +33,11 @@
         </div>
     </section>
 
-    <section id="contact" class="container mt-5">
+    <section id="contact" class="container mt-5 fadeIn">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h2>Contattami</h2>
-                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="p-3 border rounded">
+                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="p-4 border rounded shadow-sm">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome:</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -90,14 +52,51 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Invia</button>
                 </form>
-                <div id="formResult" class="mt-3"></div>
+                <div id="formResult" class="mt-3 text-success"></div>
             </div>
         </div>
     </section>
 
-    <footer class="container text-center py-3">
+    <footer class="container-fluid text-center py-4 mt-5 bg-primary text-white">
         <p>© 2024 Simone Ascione Website - Tutti i diritti riservati</p>
     </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                // Invia il form
+                this.submit();
+                document.getElementById('formResult').innerText = "Messaggio inviato con successo!";
+            } else {
+                document.getElementById('formResult').innerText = "Per favore, compila tutti i campi.";
+            }
+        });
+
+        function loadPage(page) {
+            const content = document.getElementById('content');
+            switch (page) {
+                case 'home':
+                    content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
+                    break;
+                case 'about':
+                    content.innerHTML = "<h2>Chi sono</h2><p>Sono un appassionato di sviluppo web.</p>";
+                    break;
+                case 'contact':
+                    content.innerHTML = `<h2>Contattami</h2><p>Email: tuamail@example.com</p>`;
+                    break;
+                default:
+                    content.innerHTML = "<h2>Errore</h2><p>Pagina non trovata.</p>";
+            }
+        }
+
+        // Carica la home all'inizio
+        loadPage('home');
+    </script>
 </body>
 
 </html>
