@@ -1,18 +1,18 @@
 /* Stile di base */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f0; /* Sostituito con valore statico */
-    color: #333; /* Sostituito con valore statico */
+    background-color: #f0f0f0;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 h1, h2 {
-    color: #0d6efd; /* Sostituito con valore statico */
+    color: #0d6efd;
 }
 
 header {
-    background-color: #00a86b; /* Sostituito con valore statico */
+    background-color: #00a86b;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -39,7 +39,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #e0e0e0; /* Sostituito con valore statico */
+    color: #e0e0e0;
 }
 
 section {
@@ -47,18 +47,18 @@ section {
 }
 
 footer {
-    background-color: #0d6efd; /* Sostituito con valore statico */
+    background-color: #0d6efd;
     color: white;
     padding: 20px 0;
 }
 
 a {
-    color: #00a86b; /* Sostituito con valore statico */
+    color: #00a86b;
     text-decoration: none;
 }
 
 a:hover {
-    color: #005f3f; /* Sostituito con valore statico */
+    color: #005f3f;
 }
 
 form {
@@ -71,11 +71,11 @@ form {
 input, textarea {
     border-radius: 5px;
     padding: 10px;
-    border: 1px solid #ced4da; /* Sostituito con valore statico */
+    border: 1px solid #ced4da;
 }
 
 button {
-    background-color: #00a86b; /* Sostituito con valore statico */
+    background-color: #00a86b;
     color: white;
     padding: 10px;
     border: none;
@@ -85,17 +85,17 @@ button {
 }
 
 button:hover {
-    background-color: #005f3f; /* Sostituito con valore statico */
+    background-color: #005f3f;
 }
 
 .btn-primary {
-    background-color: #0d6efd; /* Sostituito con valore statico */
+    background-color: #0d6efd;
     border: none;
     transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #004080; /* Sostituito con valore statico */
+    background-color: #004080;
 }
 
 /* Animazioni */
