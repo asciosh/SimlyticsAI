@@ -20,7 +20,7 @@
     <header class="container-fluid text-center py-5">
         <h1>Benvenuto nel mio sito!</h1>
         <p>Scopri i miei progetti e le mie competenze nel mondo dello sviluppo web.</p>
-        <button class="btn btn-primary mt-3" onclick="loadPage('projects')">Esplora i Progetti</button>
+        <button class="btn btn-success mt-3" onclick="loadPage('projects')">Esplora i Progetti</button>
     </header>
 
     <div class="container-fluid d-flex flex-column min-vh-100">
@@ -54,8 +54,7 @@
 
             <!-- Contenuto Principale -->
             <main class="col-md-10">
-                <div id="content" class="mt-4 fadeIn" role="main">
-                    <!-- Aggiunta di un messaggio di benvenuto e un background -->
+                <div id="content" class="mt-4 fadeIn text-center" role="main">
                     <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
                         <h2>Benvenuti nel mio portfolio!</h2>
                         <p>Seleziona una sezione dal menu per esplorare i miei progetti e competenze.</p>
@@ -67,6 +66,7 @@
 
         <footer class="container-fluid text-center py-4 mt-auto" id="footer">
             <p>© <span id="year"></span> Simone Ascione Website - Tutti i diritti riservati</p>
+            <p id="footer-message">Sezione attiva: Home</p>
             <a href="https://www.linkedin.com" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com" class="text-white"><i class="fab fa-github"></i></a>
         </footer>
@@ -102,17 +102,18 @@
         function loadPage(page) {
             const content = document.getElementById('content');
             content.classList.remove('fadeIn'); // Nascondi contenuto
-            content.innerHTML = "<div class='text-center'><p>Caricamento...</p></div>"; // Messaggio di caricamento
 
             setTimeout(() => {
                 switch (page) {
                     case 'home':
                         content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
+                        updateFooterMessage("Sezione attiva: Home");
                         break;
                     case 'about':
                         content.innerHTML = 
                             "<h2>Chi sono</h2>" +
                             "<p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>";
+                        updateFooterMessage("Sezione attiva: Chi sono");
                         break;
                     case 'projects':
                         content.innerHTML = 
@@ -137,30 +138,39 @@
                                     "<p>Un breve riepilogo del progetto 3.</p>" +
                                 "</div>" +
                             "</div>";
+                        updateFooterMessage("Sezione attiva: Progetti");
                         break;
                     case 'skills':
                         content.innerHTML = 
                             "<h2>Competenze</h2>" +
-                            "<ul>" +
+                            "<ul class='list-unstyled'>" +
                                 "<li>HTML & CSS</li>" +
                                 "<li>JavaScript</li>" +
                                 "<li>Bootstrap & Responsive Design</li>" +
                                 "<li>React & Angular</li>" +
                                 "<li>PHP & MySQL</li>" +
                             "</ul>";
+                        updateFooterMessage("Sezione attiva: Competenze");
                         break;
                     case 'testimonials':
                         content.innerHTML = "<h2>Testimonianze</h2><p>Leggi le testimonianze di chi ha lavorato con me.</p>";
+                        updateFooterMessage("Sezione attiva: Testimonianze");
                         break;
                     case 'contact':
                         content.innerHTML = "<h2>Contattami</h2><p>Se hai domande, non esitare a contattarmi.</p>";
+                        updateFooterMessage("Sezione attiva: Contatti");
                         break;
                     default:
                         content.innerHTML = "<p>Pagina non trovata.</p>";
+                        updateFooterMessage("Sezione attiva: Pagina non trovata");
                 }
 
                 content.classList.add('fadeIn'); // Mostra il contenuto con effetto
             }, 500);
+        }
+
+        function updateFooterMessage(message) {
+            document.getElementById('footer-message').textContent = message;
         }
 
         // Abilita smooth scroll per la navigazione
