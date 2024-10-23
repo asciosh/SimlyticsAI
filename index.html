@@ -35,6 +35,9 @@
                         <a href="#skills" class="nav-link" onclick="loadPage('skills')">Competenze</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#testimonials" class="nav-link" onclick="loadPage('testimonials')">Testimonianze</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a>
                     </li>
                 </ul>
@@ -72,7 +75,7 @@
         function loadPage(page) {
             const content = document.getElementById('content');
             content.classList.remove('fadeIn'); // Nascondi contenuto
-            content.innerHTML = ""; // Pulisci contenuto
+            content.innerHTML = "<div class='text-center'><p>Caricamento...</p></div>"; // Caricamento
 
             setTimeout(() => {
                 switch (page) {
@@ -125,6 +128,31 @@
                                 <li>Backend: Node.js, Express</li>
                                 <li>Database: MongoDB, SQL</li>
                             </ul>
+                        `;
+                        break;
+                    case 'testimonials':
+                        content.innerHTML = `
+                            <h2>Testimonianze</h2>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <blockquote class="blockquote">
+                                        <p>"Simone ha fatto un ottimo lavoro nel nostro progetto. Consiglio vivamente!"</p>
+                                        <footer class="blockquote-footer">Mario Rossi</footer>
+                                    </blockquote>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <blockquote class="blockquote">
+                                        <p>"Professionista serio e competente. È stato un piacere lavorare con lui!"</p>
+                                        <footer class="blockquote-footer">Anna Bianchi</footer>
+                                    </blockquote>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <blockquote class="blockquote">
+                                        <p>"Un'ottima esperienza, ha sempre rispettato le scadenze."</p>
+                                        <footer class="blockquote-footer">Luca Verdi</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
                         `;
                         break;
                     case 'contact':
