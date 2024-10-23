@@ -11,9 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Link per la libreria Lightbox -->
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> <!-- Icone -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +25,7 @@
     <div class="container-fluid d-flex flex-column min-vh-100">
         <div class="row flex-grow-1">
             <!-- Barra Laterale -->
-            <nav class="col-md-2 sidebar" aria-label="Navigazione principale">
+            <nav class="col-md-2 col-sm-3 sidebar" aria-label="Navigazione principale">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a href="#home" class="nav-link" onclick="loadPage('home')">Home</a>
@@ -53,7 +52,7 @@
             </nav>
 
             <!-- Contenuto Principale -->
-            <main class="col-md-10">
+            <main class="col-md-10 col-sm-9">
                 <div id="content" class="mt-4 fadeIn text-center" role="main">
                     <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
                         <h2>Benvenuti nel mio portfolio!</h2>
@@ -183,7 +182,6 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script per la libreria Lightbox -->
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
 </body>
 
