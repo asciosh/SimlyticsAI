@@ -18,6 +18,7 @@
             <ul class="nav justify-content-center">
                 <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">Chi sono</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Progetti</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a></li>
             </ul>
         </nav>
@@ -29,6 +30,28 @@
             <div class="col-md-8 offset-md-2">
                 <h2>Chi sono</h2>
                 <p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container mt-5 fadeIn">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2>I miei Progetti</h2>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Progetto 1</h5>
+                        <p class="card-text">Descrizione del progetto 1. È un progetto innovativo che utilizza tecnologie moderne.</p>
+                        <a href="#" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Progetto 2</h5>
+                        <p class="card-text">Descrizione del progetto 2. Questo progetto ha ricevuto feedback eccezionali dagli utenti.</p>
+                        <a href="#" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -59,6 +82,8 @@
 
     <footer class="container-fluid text-center py-4 mt-5 bg-primary text-white">
         <p>© 2024 Simone Ascione Website - Tutti i diritti riservati</p>
+        <a href="https://www.linkedin.com" class="text-white">LinkedIn</a> | 
+        <a href="https://github.com" class="text-white">GitHub</a>
     </footer>
 
     <script>
@@ -85,6 +110,24 @@
                     break;
                 case 'about':
                     content.innerHTML = "<h2>Chi sono</h2><p>Sono un appassionato di sviluppo web.</p>";
+                    break;
+                case 'projects':
+                    content.innerHTML = `
+                        <h2>I miei Progetti</h2>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Progetto 1</h5>
+                                <p class="card-text">Descrizione del progetto 1. È un progetto innovativo che utilizza tecnologie moderne.</p>
+                                <a href="#" class="btn btn-primary">Scopri di più</a>
+                            </div>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Progetto 2</h5>
+                                <p class="card-text">Descrizione del progetto 2. Questo progetto ha ricevuto feedback eccezionali dagli utenti.</p>
+                                <a href="#" class="btn btn-primary">Scopri di più</a>
+                            </div>
+                        </div>`;
                     break;
                 case 'contact':
                     content.innerHTML = `<h2>Contattami</h2><p>Email: asciosimo@gmail.com</p>`;
