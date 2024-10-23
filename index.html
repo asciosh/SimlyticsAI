@@ -13,12 +13,14 @@
     <link rel="stylesheet" href="style.css">
     <!-- Link per la libreria Lightbox -->
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> <!-- Icone -->
 </head>
 
 <body>
     <header class="container-fluid text-center py-5">
         <h1>Benvenuto nel mio sito!</h1>
         <p>Scopri i miei progetti e le mie competenze nel mondo dello sviluppo web.</p>
+        <button class="btn btn-primary mt-3" onclick="loadPage('projects')">Esplora i Progetti</button>
     </header>
 
     <div class="container-fluid d-flex flex-column min-vh-100">
@@ -44,19 +46,29 @@
                     <li class="nav-item">
                         <a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" id="toggleTheme" class="nav-link">🌓 Modalità Scura</a>
+                    </li>
                 </ul>
             </nav>
 
             <!-- Contenuto Principale -->
             <main class="col-md-9 offset-md-3">
-                <div id="content" class="mt-4 fadeIn" role="main"></div>
+                <div id="content" class="mt-4 fadeIn" role="main">
+                    <!-- Aggiunta di un messaggio di benvenuto e un background -->
+                    <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                        <h2>Benvenuti nel mio portfolio!</h2>
+                        <p>Seleziona una sezione dal menu per esplorare i miei progetti e competenze.</p>
+                        <button class="btn btn-success mt-3" onclick="loadPage('about')">Scopri di più su di me</button>
+                    </div>
+                </div>
             </main>
         </div>
 
-        <footer class="container-fluid text-center py-4">
-            <p>© 2024 Simone Ascione Website - Tutti i diritti riservati</p>
-            <a href="https://www.linkedin.com" class="text-white">LinkedIn</a> |
-            <a href="https://github.com" class="text-white">GitHub</a>
+        <footer class="container-fluid text-center py-4 mt-auto" id="footer">
+            <p>© <span id="year"></span> Simone Ascione Website - Tutti i diritti riservati</p>
+            <a href="https://www.linkedin.com" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" class="text-white"><i class="fab fa-github"></i></a>
         </footer>
     </div>
 
@@ -76,10 +88,21 @@
     </div>
 
     <script>
+        // Aggiunta dell'anno dinamico nel footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Funzione per la modalità scura
+        document.getElementById('toggleTheme').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            document.getElementById('toggleTheme').textContent = isDarkMode ? '🌞 Modalità Chiara' : '🌓 Modalità Scura';
+        });
+
+        // Funzione per il caricamento dinamico delle pagine
         function loadPage(page) {
             const content = document.getElementById('content');
             content.classList.remove('fadeIn'); // Nascondi contenuto
-            content.innerHTML = "<div class='text-center'><p>Caricamento...</p></div>"; // Caricamento
+            content.innerHTML = "<div class='text-center'><p>Caricamento...</p></div>"; // Messaggio di caricamento
 
             setTimeout(() => {
                 switch (page) {
@@ -119,70 +142,34 @@
                         content.innerHTML = 
                             "<h2>Competenze</h2>" +
                             "<ul>" +
-                                "<li>HTML, CSS, JavaScript</li>" +
-                                "<li>Frameworks: React, Bootstrap</li>" +
-                                "<li>Backend: Node.js, Express</li>" +
-                                "<li>Database: MongoDB, SQL</li>" +
+                                "<li>HTML & CSS</li>" +
+                                "<li>JavaScript</li>" +
+                                "<li>Bootstrap & Responsive Design</li>" +
+                                "<li>React & Angular</li>" +
+                                "<li>PHP & MySQL</li>" +
                             "</ul>";
                         break;
                     case 'testimonials':
-                        content.innerHTML = 
-                            "<h2>Testimonianze</h2>" +
-                            "<div class='row'>" +
-                                "<div class='col-md-4 mb-3'>" +
-                                    "<blockquote class='blockquote'>" +
-                                        "<p>'Simone ha fatto un ottimo lavoro nel nostro progetto. Consiglio vivamente!'</p>" +
-                                        "<footer class='blockquote-footer'>Mario Rossi</footer>" +
-                                    "</blockquote>" +
-                                "</div>" +
-                                "<div class='col-md-4 mb-3'>" +
-                                    "<blockquote class='blockquote'>" +
-                                        "<p>'Professionista serio e competente. È stato un piacere lavorare con lui!'</p>" +
-                                        "<footer class='blockquote-footer'>Anna Bianchi</footer>" +
-                                    "</blockquote>" +
-                                "</div>" +
-                                "<div class='col-md-4 mb-3'>" +
-                                    "<blockquote class='blockquote'>" +
-                                        "<p>'Un'ottima esperienza, ha sempre rispettato le scadenze.'</p>" +
-                                        "<footer class='blockquote-footer'>Luca Verdi</footer>" +
-                                    "</blockquote>" +
-                                "</div>" +
-                            "</div>";
+                        content.innerHTML = "<h2>Testimonianze</h2><p>Leggi le testimonianze di chi ha lavorato con me.</p>";
                         break;
                     case 'contact':
-                        content.innerHTML = 
-                            "<h2>Contatti</h2>" +
-                            "<form id='contactForm'>" +
-                                "<div class='mb-3'>" +
-                                    "<label for='name' class='form-label'>Nome</label>" +
-                                    "<input type='text' class='form-control' id='name' required>" +
-                                "</div>" +
-                                "<div class='mb-3'>" +
-                                    "<label for='email' class='form-label'>Email</label>" +
-                                    "<input type='email' class='form-control' id='email' required>" +
-                                "</div>" +
-                                "<div class='mb-3'>" +
-                                    "<label for='message' class='form-label'>Messaggio</label>" +
-                                    "<textarea class='form-control' id='message' rows='3' required></textarea>" +
-                                "</div>" +
-                                "<button type='submit' class='btn btn-primary'>Invia</button>" +
-                            "</form>" +
-                            "<div id='formResponse' class='mt-3' style='display: none;'></div>";
-                        
-                        document.getElementById('contactForm').addEventListener('submit', function (e) {
-                            e.preventDefault();
-                            document.getElementById('formResponse').innerHTML = 
-                                "<div class='alert alert-success'>Messaggio inviato con successo!</div>";
-                            document.getElementById('formResponse').style.display = 'block';
-                        });
+                        content.innerHTML = "<h2>Contattami</h2><p>Se hai domande, non esitare a contattarmi.</p>";
                         break;
                     default:
-                        content.innerHTML = "<h2>Errore</h2><p>La pagina richiesta non è disponibile.</p>";
-                        break;
+                        content.innerHTML = "<p>Pagina non trovata.</p>";
                 }
-                content.classList.add('fadeIn');
-            }, 500); // Simula il ritardo di caricamento
+
+                content.classList.add('fadeIn'); // Mostra il contenuto
+            }, 500);
         }
+
+        // Abilita smooth scroll per la navigazione
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
