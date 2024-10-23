@@ -50,11 +50,14 @@ nav ul li a:hover {
     left: 0;
     z-index: 100;
     background-color: #f8f9fa;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar .nav-link {
     color: #000;
     transition: background-color 0.3s ease;
+    padding: 15px 20px;
+    font-size: 16px;
 }
 
 .sidebar .nav-link:hover {
@@ -70,6 +73,7 @@ footer {
     background-color: #0d6efd;
     color: white;
     padding: 20px 0;
+    text-align: center;
 }
 
 a {
@@ -92,6 +96,7 @@ input, textarea {
     border-radius: 5px;
     padding: 10px;
     border: 1px solid #ced4da;
+    width: 100%; /* Assicurati che gli input occupino il 100% del contenitore */
 }
 
 button {
