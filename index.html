@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html lang="it">
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+
+        if (name && email && message) {
+            // Invia il form
+            this.submit();
+            document.getElementById('formResult').innerText = "Messaggio inviato con successo!";
+        } else {
+            document.getElementById('formResult').innerText = "Per favore, compila tutti i campi.";
+        }
+    });
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
