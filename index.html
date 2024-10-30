@@ -40,9 +40,6 @@
                         <a href="#skills" class="nav-link" onclick="loadPage('skills')">Competenze</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#testimonials" class="nav-link" onclick="loadPage('testimonials')">Testimonianze</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a>
                     </li>
                     <li class="nav-item">
@@ -179,10 +176,6 @@
                                 "<li>PHP & MySQL</li>" +
                             "</ul>";
                         updateFooterMessage("Sezione attiva: Competenze");
-                        break;
-                    case 'testimonials':
-                        content.innerHTML = "<h2>Testimonianze</h2><p>Leggi le testimonianze di chi ha lavorato con me.</p>";
-                        updateFooterMessage("Sezione attiva: Testimonianze");
                         break;
                     case 'contact':
                         content.innerHTML = "<h2>Contattami</h2><button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Apri Modulo di Contatto</button>";
