@@ -14,15 +14,22 @@
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Impostazioni base */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* Sezione Parallax */
         .parallax {
-            background-image: url('https://images.unsplash.com/photo-1511719247861-5d5b1f1767d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHBhcmFsbGVsJTIwYmFja2dyb3VuZGV8ZW58MHx8fHwxNjg2MDM0OTMx&ixlib=rb-4.0.3&q=80&w=1080');
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
             background-size: cover;
+            background-position: center;
             background-attachment: fixed;
             color: white;
             height: 100vh;
@@ -30,61 +37,156 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
         }
 
+        /* Sezione principale */
         .main-content {
-            background-image: url('https://images.unsplash.com/photo-1521747116042-5a810fda9664?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxtYW5wbGF0ZSUyMGJvdHRvbXxlbnwwfHx8fDE2ODYwMzk2NTY&ixlib=rb-4.0.3&q=80&w=1080');
-            background-size: cover;
+            background-color: #f8f9fa;
             padding: 20px;
+        }
+
+        /* Modalità scura */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .parallax {
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Barra laterale */
+        .sidebar {
+            background-color: #343a40;
+            min-height: 100vh;
+            padding-top: 1rem;
+        }
+
+        .sidebar .nav-link {
+            color: #ffffff;
+            font-size: 1.1rem;
+            padding: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background-color: #28a745;
+            border-radius: 4px;
+        }
+
+        /* Animazione fade */
+        .fadeIn {
+            animation: fadeIn 0.6s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Pulsante Modalità Scura/Chiara */
+        #toggleTheme {
+            cursor: pointer;
+            color: #fff;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        #toggleTheme:hover {
+            color: #ddd;
+        }
+
+        /* Pulsanti generali */
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838;
+            color: white;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Immagini di progetto */
+        .project-thumbnail {
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .project-thumbnail:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
+    <!-- Header -->
     <header class="container-fluid text-center py-5 parallax">
         <h1>Benvenuto nel mio sito!</h1>
         <p>Scopri i miei progetti e le mie competenze nel mondo dello sviluppo web.</p>
-        <button class="btn btn-success mt-3" onclick="loadPage('projects')">Esplora i Progetti</button>
+        <button class="btn btn-custom mt-3" onclick="loadPage('projects')">Esplora i Progetti</button>
     </header>
 
+    <!-- Layout principale -->
     <div class="container-fluid d-flex flex-column min-vh-100">
         <div class="row flex-grow-1">
             <!-- Barra Laterale -->
-            <nav class="col-md-2 col-sm-3 sidebar" aria-label="Navigazione principale">
+            <nav class="col-md-2 sidebar">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link" onclick="loadPage('home')">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link" onclick="loadPage('about')">Chi sono</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link" onclick="loadPage('projects')">Progetti</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link" onclick="loadPage('skills')">Competenze</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" id="toggleTheme" class="nav-link">🌓 Modalità Scura</a>
-                    </li>
+                    <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">Chi sono</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Progetti</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Competenze</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a></li>
+                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Modalità Scura</a></li>
                 </ul>
             </nav>
 
-            <!-- Contenuto Principale -->
-            <main class="col-md-10 col-sm-9 main-content">
-                <div id="content" class="mt-4 fadeIn text-center" role="main">
-                    <div class="text-center p-5" style="background: rgba(255, 255, 255, 0.8); border-radius: 10px;">
+            <!-- Contenuto principale -->
+            <main class="col-md-10 main-content">
+                <div id="content" class="mt-4 fadeIn text-center">
+                    <div class="p-5" style="background: rgba(255, 255, 255, 0.9); border-radius: 10px;">
                         <h2>Benvenuti nel mio portfolio!</h2>
                         <p>Seleziona una sezione dal menu per esplorare i miei progetti e competenze.</p>
-                        <button class="btn btn-success mt-3" onclick="loadPage('about')">Scopri di più su di me</button>
+                        <button class="btn btn-custom mt-3" onclick="loadPage('about')">Scopri di più su di me</button>
                     </div>
                 </div>
             </main>
         </div>
 
+        <!-- Footer -->
         <footer class="container-fluid text-center py-4 mt-auto" id="footer">
             <p>© <span id="year"></span> Simone Ascione Website - Tutti i diritti riservati</p>
             <p id="footer-message">Sezione attiva: Home</p>
@@ -93,151 +195,44 @@
         </footer>
     </div>
 
-    <!-- Modale per i progetti -->
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel">Dettagli Progetto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
-                </div>
-                <div class="modal-body">
-                    <p id="projectDetails">Dettagli del progetto qui.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Form di contatto -->
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Contattami</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="contactForm">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="name" placeholder="Il tuo nome" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Il tuo email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Messaggio</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Il tuo messaggio" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-success">Invia Messaggio</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Aggiunta dell'anno dinamico nel footer
+        // Anno dinamico
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Funzione per la modalità scura
+        // Toggle modalità scura
         document.getElementById('toggleTheme').addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            document.getElementById('toggleTheme').textContent = isDarkMode ? '🌞 Modalità Chiara' : '🌓 Modalità Scura';
+            this.textContent = document.body.classList.contains('dark-mode') ? '🌞 Modalità Chiara' : '🌓 Modalità Scura';
         });
 
-        // Funzione per il caricamento dinamico delle pagine
+        // Caricamento delle sezioni
         function loadPage(page) {
             const content = document.getElementById('content');
-            content.classList.remove('fadeIn'); // Nascondi contenuto
-
+            content.classList.remove('fadeIn');
             setTimeout(() => {
+                let sectionContent = '';
                 switch (page) {
                     case 'home':
-                        content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
-                        updateFooterMessage("Sezione attiva: Home");
+                        sectionContent = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
                         break;
                     case 'about':
-                        content.innerHTML = 
-                            "<h2>Chi sono</h2>" +
-                            "<p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>";
-                        updateFooterMessage("Sezione attiva: Chi sono");
+                        sectionContent = "<h2>Chi sono</h2><p>Sono un appassionato di sviluppo web...</p>";
                         break;
                     case 'projects':
-                        content.innerHTML = 
-                            "<h2>I miei Progetti</h2>" +
-                            "<div class='row'>" +
-                                "<div class='col-md-4 mb-3'>" +
-                                    "<a href='img/progetto1.jpg' data-lightbox='projects' data-title='Progetto 1'>" +
-                                        "<img src='img/progetto1_thumb.jpg' alt='Anteprima Progetto 1' class='img-fluid' />" +
-                                    "</a>" +
-                                    "<p>Un breve riepilogo del progetto 1.</p>" +
-                                "</div>" +
-                                "<div class='col-md-4 mb-3'>" +
-                                    "<a href='img/progetto2.jpg' data-lightbox='projects' data-title='Progetto 2'>" +
-                                        "<img src='img/progetto2_thumb.jpg' alt='Anteprima Progetto 2' class='img-fluid' />" +
-                                    "</a>" +
-                                    "<p>Un breve riepilogo del progetto 2.</p>" +
-                                "</div>" +
-                                "<div class='col-md-4 mb-3'>" +
-                                    "<a href='img/progetto3.jpg' data-lightbox='projects' data-title='Progetto 3'>" +
-                                        "<img src='img/progetto3_thumb.jpg' alt='Anteprima Progetto 3' class='img-fluid' />" +
-                                    "</a>" +
-                                    "<p>Un breve riepilogo del progetto 3.</p>" +
-                                "</div>" +
-                            "</div>";
-                        updateFooterMessage("Sezione attiva: Progetti");
+                        sectionContent = "<h2>I miei Progetti</h2><div class='row'>...</div>";
                         break;
                     case 'skills':
-                        content.innerHTML = 
-                            "<h2>Competenze</h2>" +
-                            "<ul class='list-unstyled'>" +
-                                "<li>HTML & CSS</li>" +
-                                "<li>JavaScript</li>" +
-                                "<li>Bootstrap & Responsive Design</li>" +
-                                "<li>React & Angular</li>" +
-                                "<li>PHP & MySQL</li>" +
-                            "</ul>";
-                        updateFooterMessage("Sezione attiva: Competenze");
+                        sectionContent = "<h2>Le mie Competenze</h2><p>Esperienza in HTML, CSS, JS...</p>";
                         break;
                     case 'contact':
-                        content.innerHTML = "<h2>Contattami</h2><button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Apri Modulo di Contatto</button>";
-                        updateFooterMessage("Sezione attiva: Contatti");
+                        sectionContent = "<h2>Contatti</h2><p>Inviami un messaggio su LinkedIn o GitHub.</p>";
                         break;
-                    default:
-                        content.innerHTML = "<p>Pagina non trovata.</p>";
-                        updateFooterMessage("Sezione attiva: Pagina non trovata");
                 }
-
-                content.classList.add('fadeIn'); // Mostra il contenuto con effetto
-            }, 500);
+                content.innerHTML = sectionContent;
+                content.classList.add('fadeIn');
+                document.getElementById('footer-message').textContent = `Sezione attiva: ${page.charAt(0).toUpperCase() + page.slice(1)}`;
+            }, 200);
         }
-
-        function updateFooterMessage(message) {
-            document.getElementById('footer-message').textContent = message;
-        }
-
-        // Validazione del form di contatto
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Previene l'invio del form
-            alert('Messaggio inviato!'); // Simula l'invio
-            this.reset(); // Resetta il form
-            document.getElementById('contactModal').modal('hide'); // Chiudi la modale
-        });
-
-        // Abilita smooth scroll per la navigazione
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
 </body>
-
 </html>
