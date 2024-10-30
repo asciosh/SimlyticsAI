@@ -7,17 +7,30 @@ body, h1, h2, h3, p, ul {
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
     background-color: #f5f5f5;
     color: #333;
 }
 
 .parallax {
-    background-image: url('header.jpg');
-    background-attachment: fixed;
-    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1511719247861-5d5b1f1767d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHBhcmFsbGVsJTIwYmFja2dyb3VuZGV8ZW58MHx8fHwxNjg2MDM0OTMx&ixlib=rb-4.0.3&q=80&w=1080');
     background-size: cover;
+    background-attachment: fixed;
     color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    background-image: url('https://images.unsplash.com/photo-1521747116042-5a810fda9664?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxtYW5wbGF0ZSUyMGJvdHRvbXxlbnwwfHx8fDE2ODYwMzk2NTY&ixlib=rb-4.0.3&q=80&w=1080');
+    background-size: cover;
+    padding: 20px;
 }
 
 h1, h2, h3 {
