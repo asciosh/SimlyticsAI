@@ -86,6 +86,35 @@
         </div>
     </div>
 
+    <!-- Form di contatto -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contattami</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name" placeholder="Il tuo nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Il tuo email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Messaggio</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Il tuo messaggio" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Invia Messaggio</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Aggiunta dell'anno dinamico nel footer
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -156,7 +185,7 @@
                         updateFooterMessage("Sezione attiva: Testimonianze");
                         break;
                     case 'contact':
-                        content.innerHTML = "<h2>Contattami</h2><p>Se hai domande, non esitare a contattarmi.</p>";
+                        content.innerHTML = "<h2>Contattami</h2><button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Apri Modulo di Contatto</button>";
                         updateFooterMessage("Sezione attiva: Contatti");
                         break;
                     default:
@@ -171,6 +200,14 @@
         function updateFooterMessage(message) {
             document.getElementById('footer-message').textContent = message;
         }
+
+        // Validazione del form di contatto
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previene l'invio del form
+            alert('Messaggio inviato!'); // Simula l'invio
+            this.reset(); // Resetta il form
+            document.getElementById('contactModal').modal('hide'); // Chiudi la modale
+        });
 
         // Abilita smooth scroll per la navigazione
         document.querySelectorAll('.nav-link').forEach(link => {
