@@ -13,7 +13,7 @@ body {
 }
 
 .parallax {
-    background-image: url('header.jpg');
+    background-image: url('images/data-science-bg.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
