@@ -12,13 +12,13 @@ body {
     color: #333;
 }
 
-
 .parallax {
     background-image: url('header.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-
+    color: green;
+}
 
 h1, h2, h3 {
     color: #333;
@@ -107,8 +107,7 @@ main p {
 }
 
 .fadeIn {
-    opacity: 0;
-    animation: fadeInEffect 1s forwards;
+    animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
