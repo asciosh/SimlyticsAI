@@ -12,4 +12,4 @@ Questo è un semplice sito statico creato con **HTML5** e **CSS3**. Il sito incl
 
 ## Come visualizzare il sito
 
-Puoi visitare il sito online all'indirizzo: https://github.com/asciosh/website
+Puoi visitare il sito online all'indirizzo: https://asciosh.github.io/website/
