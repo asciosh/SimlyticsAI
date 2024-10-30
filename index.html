@@ -13,6 +13,31 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .parallax {
+            background-image: url('https://images.unsplash.com/photo-1511719247861-5d5b1f1767d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHBhcmFsbGVsJTIwYmFja2dyb3VuZGV8ZW58MHx8fHwxNjg2MDM0OTMx&ixlib=rb-4.0.3&q=80&w=1080');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-content {
+            background-image: url('https://images.unsplash.com/photo-1521747116042-5a810fda9664?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxtYW5wbGF0ZSUyMGJvdHRvbXxlbnwwfHx8fDE2ODYwMzk2NTY&ixlib=rb-4.0.3&q=80&w=1080');
+            background-size: cover;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,9 +74,9 @@
             </nav>
 
             <!-- Contenuto Principale -->
-            <main class="col-md-10 col-sm-9">
+            <main class="col-md-10 col-sm-9 main-content">
                 <div id="content" class="mt-4 fadeIn text-center" role="main">
-                    <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                    <div class="text-center p-5" style="background: rgba(255, 255, 255, 0.8); border-radius: 10px;">
                         <h2>Benvenuti nel mio portfolio!</h2>
                         <p>Seleziona una sezione dal menu per esplorare i miei progetti e competenze.</p>
                         <button class="btn btn-success mt-3" onclick="loadPage('about')">Scopri di più su di me</button>
