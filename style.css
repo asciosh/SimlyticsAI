@@ -1,108 +1,240 @@
-/* Reset dei margini e padding di default */
-* {
+/* Resetta alcuni stili di base */
+body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Corpo del documento */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    transition: background-color 0.3s ease;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.parallax {
+    background-image: url('header.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+h1, h2, h3 {
+    color: #333;
 }
 
 /* Modalità scura */
 body.dark-mode {
-    background-color: #343a40;
-    color: #f8f9fa;
+    background-color: #121212;
+    color: #f5f5f5;
 }
 
-/* Header */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+/* Contenitore principale */
+.container-fluid {
+    padding: 0;
+}
+
 header {
-    background-image: url('img/data-science-header.jpg'); /* Sostituisci con il percorso della tua immagine */
-    background-size: cover;
-    background-position: center;
+    background-color: #28a745; 
     color: white;
-    padding: 100px 0;
+    padding: 40px 0;
 }
 
-/* Barra laterale */
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.25rem;
+}
+
+header button {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+/* Sidebar */
 .sidebar {
-    background-color: #007bff;
-    color: white;
+    background-color: #343a40;
+    height: 100vh;
+    width: 200px;
+    padding: 20px 0;
+    position: sticky;
 }
 
-.sidebar a {
-    color: white;
+.sidebar .nav-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-.sidebar a:hover {
-    background-color: #0056b3;
+.sidebar .nav-link:hover {
+    background-color: #28a745; 
 }
 
-/* Contenuto principale */
+.sidebar .nav-link.active {
+    background-color: #28a745; 
+}
+
+/* Main content */
 main {
     padding: 20px;
+    flex-grow: 1;
+    transition: background-color 0.3s ease-in-out;
 }
 
-h2 {
+main h2 {
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.text-center p {
-    margin-bottom: 30px;
+main p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-/* Footer */
-footer {
-    background-color: #007bff;
-    color: white;
-    padding: 20px 0;
-}
-
-/* Transizioni */
 .fadeIn {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
+    animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
     to {
         opacity: 1;
     }
 }
 
-/* Stile per le immagini dei progetti */
-.img-fluid {
+/* Footer */
+#footer {
+    background-color: #28a745;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+}
+
+#footer a {
+    color: white;
+    margin: 0 10px;
+}
+
+#footer a:hover {
+    color: #ddd;
+}
+
+#footer p {
+    margin-bottom: 0;
+}
+
+/* Modalità scura per il footer */
+body.dark-mode #footer {
+    background-color: #333;
+}
+
+body.dark-mode #footer a {
+    color: #bb86fc;
+}
+
+/* Pulsante Modalità Scura/Chiara */
+#toggleTheme {
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+
+#toggleTheme:hover {
+    color: #ddd;
+}
+
+/* Animazione smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Pulsante principale migliorato */
+button.btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.btn:hover {
+    background-color: #218838;
+    color: white;
+}
+
+/* Form di contatto */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    background: #f5f5f5;
     border-radius: 10px;
-    transition: transform 0.3s ease;
 }
 
-.img-fluid:hover {
-    transform: scale(1.05);
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-/* Modifica delle dimensioni del footer message */
-#footer-message {
-    font-weight: bold;
+.contact-form button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
 }
 
-/* Stile per il modulo di contatto */
-.modal-content {
-    border-radius: 10px;
+.contact-form button:hover {
+    background: #218838;
 }
 
-.form-label {
-    font-weight: bold;
-}
-
-/* Media queries per dispositivi mobili */
+/* Modalità mobile */
 @media (max-width: 768px) {
-    .sidebar {
-        display: none; /* Nascondi la sidebar su schermi piccoli */
-    }
     header {
-        padding: 60px 0;
+        padding: 30px 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .sidebar {
+        height: auto;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    #footer {
+        padding: 10px 0;
     }
 }
