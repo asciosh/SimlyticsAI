@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio personale che mostra i miei progetti e competenze nel mondo dello sviluppo web.">
-    <meta name="keywords" content="portfolio, sviluppatore web, progetti, competenze">
+    <meta name="description" content="Portfolio personale che mostra i miei progetti e competenze nel mondo dello sviluppo web e data science.">
+    <meta name="keywords" content="portfolio, sviluppatore web, progetti, competenze, data science">
     <meta name="author" content="Simone Ascione">
     <title>Il mio sito</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 <body>
     <header class="container-fluid text-center py-5 parallax">
         <h1>Benvenuto nel mio sito!</h1>
-        <p>Scopri i miei progetti e le mie competenze nel mondo dello sviluppo web.</p>
+        <p>Scopri i miei progetti e le mie competenze nel mondo dello sviluppo web e data science.</p>
         <button class="btn btn-success mt-3" onclick="loadPage('projects')">Esplora i Progetti</button>
     </header>
 
@@ -40,6 +40,9 @@
                         <a href="#skills" class="nav-link" onclick="loadPage('skills')">Competenze</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#testimonials" class="nav-link" onclick="loadPage('testimonials')">Testimonianze</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a>
                     </li>
                     <li class="nav-item">
@@ -49,9 +52,9 @@
             </nav>
 
             <!-- Contenuto Principale -->
-            <main class="col-md-10 col-sm-9 main-content">
+            <main class="col-md-10 col-sm-9">
                 <div id="content" class="mt-4 fadeIn text-center" role="main">
-                    <div class="text-center p-5 content-box">
+                    <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
                         <h2>Benvenuti nel mio portfolio!</h2>
                         <p>Seleziona una sezione dal menu per esplorare i miei progetti e competenze.</p>
                         <button class="btn btn-success mt-3" onclick="loadPage('about')">Scopri di più su di me</button>
@@ -122,9 +125,87 @@
             const isDarkMode = document.body.classList.contains('dark-mode');
             document.getElementById('toggleTheme').textContent = isDarkMode ? '🌞 Modalità Chiara' : '🌓 Modalità Scura';
         });
+
+        // Funzione per il caricamento dinamico delle pagine
+        function loadPage(page) {
+            const content = document.getElementById('content');
+            content.classList.remove('fadeIn'); // Nascondi contenuto
+
+            setTimeout(() => {
+                switch (page) {
+                    case 'home':
+                        content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
+                        updateFooterMessage("Sezione attiva: Home");
+                        break;
+                    case 'about':
+                        content.innerHTML = 
+                            "<h2>Chi sono</h2>" +
+                            "<p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>";
+                        updateFooterMessage("Sezione attiva: Chi sono");
+                        break;
+                    case 'projects':
+                        content.innerHTML = 
+                            "<h2>I miei Progetti</h2>" +
+                            "<div class='row'>" +
+                                "<div class='col-md-4 mb-3'>" +
+                                    "<a href='img/progetto1.jpg' data-lightbox='projects' data-title='Progetto 1'>" +
+                                        "<img src='img/progetto1.jpg' class='img-fluid' alt='Progetto 1'>" +
+                                    "</a>" +
+                                    "<p>Progetto 1: Descrizione del progetto 1.</p>" +
+                                "</div>" +
+                                "<div class='col-md-4 mb-3'>" +
+                                    "<a href='img/progetto2.jpg' data-lightbox='projects' data-title='Progetto 2'>" +
+                                        "<img src='img/progetto2.jpg' class='img-fluid' alt='Progetto 2'>" +
+                                    "</a>" +
+                                    "<p>Progetto 2: Descrizione del progetto 2.</p>" +
+                                "</div>" +
+                                "<div class='col-md-4 mb-3'>" +
+                                    "<a href='img/progetto3.jpg' data-lightbox='projects' data-title='Progetto 3'>" +
+                                        "<img src='img/progetto3.jpg' class='img-fluid' alt='Progetto 3'>" +
+                                    "</a>" +
+                                    "<p>Progetto 3: Descrizione del progetto 3.</p>" +
+                                "</div>" +
+                            "</div>";
+                        updateFooterMessage("Sezione attiva: Progetti");
+                        break;
+                    case 'skills':
+                        content.innerHTML = 
+                            "<h2>Competenze</h2>" +
+                            "<ul class='list-unstyled'>" +
+                                "<li><i class='fab fa-html5'></i> HTML</li>" +
+                                "<li><i class='fab fa-css3-alt'></i> CSS</li>" +
+                                "<li><i class='fab fa-js'></i> JavaScript</li>" +
+                                "<li><i class='fab fa-python'></i> Python</li>" +
+                                "<li><i class='fas fa-database'></i> Data Science</li>" +
+                            "</ul>";
+                        updateFooterMessage("Sezione attiva: Competenze");
+                        break;
+                    case 'testimonials':
+                        content.innerHTML = 
+                            "<h2>Testimonianze</h2>" +
+                            "<p>Leggi cosa dicono le persone dei miei progetti.</p>";
+                        updateFooterMessage("Sezione attiva: Testimonianze");
+                        break;
+                    case 'contact':
+                        content.innerHTML = 
+                            "<h2>Contattami</h2>" +
+                            "<button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Inviami un messaggio</button>";
+                        updateFooterMessage("Sezione attiva: Contatti");
+                        break;
+                    default:
+                        content.innerHTML = "<h2>Errore</h2><p>Sezione non trovata.</p>";
+                }
+                content.classList.add('fadeIn'); // Mostra contenuto
+            }, 300); // Ritardo per effetto di transizione
+        }
+
+        // Funzione per aggiornare il messaggio del footer
+        function updateFooterMessage(message) {
+            document.getElementById('footer-message').textContent = message;
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox-plus-jquery.min.js"></script>
 </body>
 
 </html>
