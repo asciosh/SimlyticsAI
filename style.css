@@ -1,30 +1,14 @@
-/* Impostazioni base */
+/* Font */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Modalità scura */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode .parallax {
-    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
-    background-blend-mode: multiply;
 }
 
 /* Sezione Parallax */
 .parallax {
-    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
+    background-image: url('https://images.unsplash.com/photo-1511719247861-5d5b1f1767d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHBhcmFsbGVsJTIwYmFja2dyb3VuZGV8ZW58MHx8fHwxNjg2MDM0OTMx&ixlib=rb-4.0.3&q=80&w=1080');
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
     color: white;
     height: 100vh;
@@ -35,68 +19,16 @@ body.dark-mode .parallax {
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Header */
-header {
-    text-align: center;
-    color: #fff;
-    padding: 40px 0;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-/* Barra laterale */
-.sidebar {
-    background-color: #343a40;
-    min-height: 100vh;
-    padding-top: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.sidebar .nav-link {
-    color: #ffffff;
-    font-size: 1.1rem;
-    padding: 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sidebar .nav-link:hover,
-.sidebar .nav-link.active {
-    background-color: #28a745;
-    color: #fff;
-    border-radius: 4px;
-}
-
-/* Sezione principale */
 .main-content {
     background-color: #f8f9fa;
     padding: 20px;
     transition: background-color 0.3s ease;
 }
 
-/* Modalità scura per il contenuto */
-body.dark-mode .main-content {
-    background-color: #1e1e1e;
-}
-
-/* Effetti di animazione */
-.fadeIn {
-    animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.content-box {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
 }
 
 /* Pulsanti */
@@ -111,74 +43,70 @@ body.dark-mode .main-content {
 
 .btn-custom:hover {
     background-color: #218838;
+    color: #ffffff;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #343a40;
     color: white;
+    min-height: 100vh;
+    padding-top: 2rem;
 }
 
-/* Pulsante Modalità Scura/Chiara */
-#toggleTheme {
-    cursor: pointer;
-    color: #fff;
-    text-align: center;
-    margin-top: 1rem;
-    display: block;
+.sidebar .nav-link {
+    color: white;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
 
-#toggleTheme:hover {
-    color: #ddd;
+.sidebar .nav-link:hover {
+    background-color: #495057;
+}
+
+/* Modalità Scura */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .main-content {
+    background-color: #1f1f1f;
+}
+
+.dark-mode .sidebar {
+    background-color: #212529;
+}
+
+.dark-mode footer {
+    background-color: #343a40;
+}
+
+.dark-mode .btn-custom {
+    background-color: #007bff;
 }
 
 /* Footer */
-#footer {
+footer {
     background-color: #343a40;
     color: white;
-    text-align: center;
-    padding: 15px 0;
-    border-top: 1px solid #ccc;
-    transition: background-color 0.3s ease;
 }
 
-body.dark-mode #footer {
-    background-color: #1a1a1a;
-    color: #bbbbbb;
-}
-
-#footer-message {
-    font-size: 0.9rem;
-    margin-top: 5px;
-}
-
-#footer a {
+footer a {
     color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-#footer a:hover {
-    color: #ddd;
+footer a:hover {
+    color: #d1d1d1;
 }
 
-/* Immagini di progetto */
-.project-thumbnail {
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Effetto di transizione */
+.fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.project-thumbnail:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsività */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    header p {
-        font-size: 1rem;
-    }
-
-    .sidebar .nav-link {
-        font-size: 1rem;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
