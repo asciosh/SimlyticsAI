@@ -8,8 +8,10 @@ body, h1, h2, h3, p, ul {
 
 body {
     background-image: url('images/data-science-bg.jpg');
+    background-attachment: fixed; /* Optional for parallax effect */
+    background-position: center;
+    background-size: cover; /* Ensures the image covers the entire area */
     line-height: 1.6;
-    background-color: #f5f5f5;
     color: #333;
 }
 
