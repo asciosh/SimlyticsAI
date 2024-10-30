@@ -1,112 +1,108 @@
-/* Font */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset dei margini e padding di default */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Sezione Parallax */
-.parallax {
-    background-image: url('https://images.unsplash.com/photo-1511719247861-5d5b1f1767d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fHBhcmFsbGVsJTIwYmFja2dyb3VuZGV8ZW58MHx8fHwxNjg2MDM0OTMx&ixlib=rb-4.0.3&q=80&w=1080');
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
-}
-
-.main-content {
+/* Corpo del documento */
+body {
+    font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
-    padding: 20px;
     transition: background-color 0.3s ease;
 }
 
-.content-box {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
+/* Modalità scura */
+body.dark-mode {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+/* Header */
+header {
+    background-image: url('img/data-science-header.jpg'); /* Sostituisci con il percorso della tua immagine */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+/* Barra laterale */
+.sidebar {
+    background-color: #007bff;
+    color: white;
+}
+
+.sidebar a {
+    color: white;
+}
+
+.sidebar a:hover {
+    background-color: #0056b3;
+}
+
+/* Contenuto principale */
+main {
     padding: 20px;
 }
 
-/* Pulsanti */
-.btn-custom {
-    background-color: #28a745;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 5px;
+h2 {
+    margin-bottom: 20px;
 }
 
-.btn-custom:hover {
-    background-color: #218838;
-    color: #ffffff;
-}
-
-/* Sidebar */
-.sidebar {
-    background-color: #343a40;
-    color: white;
-    min-height: 100vh;
-    padding-top: 2rem;
-}
-
-.sidebar .nav-link {
-    color: white;
-    padding: 10px 15px;
-    font-weight: 500;
-    transition: background-color 0.2s;
-}
-
-.sidebar .nav-link:hover {
-    background-color: #495057;
-}
-
-/* Modalità Scura */
-.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-.dark-mode .main-content {
-    background-color: #1f1f1f;
-}
-
-.dark-mode .sidebar {
-    background-color: #212529;
-}
-
-.dark-mode footer {
-    background-color: #343a40;
-}
-
-.dark-mode .btn-custom {
-    background-color: #007bff;
+.text-center p {
+    margin-bottom: 30px;
 }
 
 /* Footer */
 footer {
-    background-color: #343a40;
+    background-color: #007bff;
     color: white;
+    padding: 20px 0;
 }
 
-footer a {
-    color: white;
-}
-
-footer a:hover {
-    color: #d1d1d1;
-}
-
-/* Effetto di transizione */
+/* Transizioni */
 .fadeIn {
-    animation: fadeIn 0.5s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Stile per le immagini dei progetti */
+.img-fluid {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.05);
+}
+
+/* Modifica delle dimensioni del footer message */
+#footer-message {
+    font-weight: bold;
+}
+
+/* Stile per il modulo di contatto */
+.modal-content {
+    border-radius: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+/* Media queries per dispositivi mobili */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Nascondi la sidebar su schermi piccoli */
+    }
+    header {
+        padding: 60px 0;
+    }
 }
