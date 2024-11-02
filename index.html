@@ -32,13 +32,6 @@
                     </li>
                     <li class="nav-item">
                         <a href="#about" class="nav-link" onclick="loadPage('about')">Chi sono</a>
-
-                        <div id="content" class="mt-4 fadeIn text-center" role="main">
-                            <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
-                                <h2>Benvenuti!</h2>
-                                <p>Seleziona una sezione.</p>
-                            </div>
-                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="#projects" class="nav-link" onclick="loadPage('projects')">Progetti</a>
@@ -144,7 +137,15 @@
             setTimeout(() => {
                 switch (page) {
                     case 'home':
-                        content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
+                        //content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
+                        content.innerHTML = `<h2>Home</h2>
+                                            <p>Benvenuto nella homepage.</p>
+                                            <div class="mt-4 fadeIn text-center" role="main">
+                                                <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                                                    <h2>Benvenuti nel mio portfolio!</h2>
+                                                    <p>Seleziona una sezione dal menu per esplorare.</p>
+                                                </div>
+                                            </div>`;
                         updateFooterMessage("Sezione attiva: Home");
                         break;
                     case 'about':
