@@ -2,13 +2,15 @@
 
 Welcome to the repository of my personal website! 🎉
 
-This is a simple static site built with **HTML5** and **CSS3**, featuring a homepage, an "About Me" section, and a "Contact" page.
+This is a dynamic static site built with **HTML5**, **CSS3**, and **JavaScript**, featuring a homepage, sections for "About Me", "Projects", "Skills", and a "Contact" page with a modal form.
 
 ## Website Structure
 
-- **Home**: A short introduction to my projects and background.
-- **About Me**: A description of my passions and experience.
-- **Contact**: Ways to reach me, including email.
+- **Home**: An introduction to my projects and skills.
+- **About Me**: Insights into my background and passion for web development.
+- **Projects**: Showcases various projects with images and descriptions.
+- **Skills**: Lists technical skills and programming languages.
+- **Contact**: A modal form to reach me directly via email.
 
 ## How to View the Site
 
