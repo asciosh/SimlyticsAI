@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio personale che mostra i miei progetti e competenze nel mondo dello sviluppo web.">
-    <meta name="keywords" content="portfolio, sviluppatore web, progetti, competenze">
+    <meta name="description" content="Personal portfolio showcasing my projects and skills in web development.">
+    <meta name="keywords" content="portfolio, web developer, projects, skills">
     <meta name="author" content="Simone Ascione">
     <title>Il mio sito</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,95 +17,83 @@
 
 <body>
     <header class="container-fluid text-center py-5 parallax">
-        <h1>Benvenuto nel mio sito!</h1>
-        <p>Scopri i miei progetti e le mie competenze nel mondo dello sviluppo web.</p>
-        <button class="btn btn-success mt-3" a href="#projects" onclick="loadPage('projects')">Esplora i Progetti</button>
+        <h1>Welcome to my site!</h1>
+        <p>Discover my projects and skills in web development.</p>
+        <button class="btn btn-success mt-3" a href="#projects" onclick="loadPage('projects')">Explore Projects</button>
     </header>
 
     <div class="container-fluid d-flex flex-column min-vh-100">
         <div class="row flex-grow-1">
-            <!-- Barra Laterale -->
-            <nav class="col-md-2 col-sm-3 sidebar" aria-label="Navigazione principale">
+            <!-- Sidebar -->
+            <nav class="col-md-2 col-sm-3 sidebar" aria-label="Main navigation">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link" onclick="loadPage('home')">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link" onclick="loadPage('about')">Chi sono</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link" onclick="loadPage('projects')">Progetti</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link" onclick="loadPage('skills')">Competenze</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link" onclick="loadPage('contact')">Contatti</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" id="toggleTheme" class="nav-link">🌓 Modalità Scura</a>
-                    </li>
+                    <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">About</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
+                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>
                 </ul>
             </nav>
 
-            <!-- Contenuto Principale -->
+            <!-- Main Content -->
             <main class="col-md-10 col-sm-9">
                 <div id="content" class="mt-4 fadeIn text-center" role="main">
                     <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
-                        <h2>Benvenuti nel mio portfolio!</h2>
-                        <p>Seleziona una sezione dal menu per esplorare i miei progetti e competenze.</p>
-                        <button class="btn btn-success mt-3" onclick="loadPage('about')">Scopri di più su di me</button>
+                        <h2>Welcome to my portfolio!</h2>
+                        <p>Select a section from the menu to explore my projects and skills.</p>
+                        <button class="btn btn-success mt-3" onclick="loadPage('about')">Learn more about me</button>
                     </div>
                 </div>
             </main>
         </div>
 
         <footer class="container-fluid text-center py-4 mt-auto" id="footer">
-            <p>© <span id="year"></span> Simone Ascione Website - Tutti i diritti riservati</p>
-            <p id="footer-message">Sezione attiva: Home</p>
+            <p>© <span id="year"></span> Simone Ascione Website - All rights reserved</p>
+            <p id="footer-message">Active section: Home</p>
             <a href="https://www.linkedin.com/in/simone-ascione-4ab415296/" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/asciosh/website/tree/main" class="text-white"><i class="fab fa-github"></i></a>
         </footer>
     </div>
 
-    <!-- Modale per i progetti -->
+    <!-- Projects Modal -->
     <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel">Dettagli Progetto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+                    <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p id="projectDetails">Dettagli del progetto qui.</p>
+                    <p id="projectDetails">Project details here.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Form di contatto -->
+    <!-- Contact Form -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Contattami</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+                    <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="contactForm">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="name" placeholder="Il tuo nome" required>
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your name" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Il tuo email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Your email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Messaggio</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Il tuo messaggio" required></textarea>
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success">Invia Messaggio</button>
+                        <button type="submit" class="btn btn-success">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -113,20 +101,20 @@
     </div>
 
     <script>
-        // Aggiunta dell'anno dinamico nel footer
+        // Dynamic year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Funzione per la modalità scura
+        // Dark mode function
         document.getElementById('toggleTheme').addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
             const isDarkMode = document.body.classList.contains('dark-mode');
-            document.getElementById('toggleTheme').textContent = isDarkMode ? '🌞 Modalità Chiara' : '🌓 Modalità Scura';
+            document.getElementById('toggleTheme').textContent = isDarkMode ? '🌞 Light Mode' : '🌓 Dark Mode';
         });
 
-        // Funzione per il caricamento dinamico delle pagine
+        // Dynamic page loading
         function loadPage(page) {
             const content = document.getElementById('content');
-            content.classList.remove('fadeIn'); // Nascondi contenuto
+            content.classList.remove('fadeIn'); // Hide content
 
             setTimeout(() => {
                 switch (page) {
@@ -135,85 +123,86 @@
                             <div class="mt-4 fadeIn text-center">
                                 <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
                                     <h2>Home</h2>
-                                    <p>Benvenuto nella homepage!</p>
+                                    <p>Welcome to the homepage!</p>
                                 </div>
                             </div>`;
-                        updateFooterMessage("Sezione attiva: Home");
+                        updateFooterMessage("Active section: Home");
                         break;
                     case 'about':
                         content.innerHTML = `
                             <div class="mt-4 fadeIn text-center">
                                 <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
-                                    <h2>Chi sono</h2>
-                                    <p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>
+                                    <h2>About Me</h2>
+                                    <p>I am passionate about web development and created this site to share a bit about myself.</p>
                                 </div>
                             </div>`;
-                        updateFooterMessage("Sezione attiva: About");
+                        updateFooterMessage("Active section: About");
                         break;
                     case 'projects':
                         content.innerHTML = `
                             <div class="mt-4 fadeIn text-center">
                                 <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
-                                    <h2>Progetti</h2>
+                                    <h2>Projects</h2>
                                     <div class="row">
                                         <div class="col-md-4 mb-3">
-                                            <a href="images/progetto1.jpg" data-lightbox="projects" data-title="Progetto 1">
-                                                <img src="images/progetto1_thumb.jpg" alt="Anteprima Progetto 1" class="img-fluid" />
+                                            <a href="images/project1.jpg" data-lightbox="projects" data-title="Project 1">
+                                                <img src="images/project1_thumb.jpg" alt="Preview Project 1" class="img-fluid" />
                                             </a>
-                                            <p>Un breve riepilogo del progetto 1.</p>
+                                            <p>A brief overview of project 1.</p>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <a href="images/progetto2.jpg" data-lightbox="projects" data-title="Progetto 2">
-                                                <img src="images/progetto2_thumb.jpg" alt="Anteprima Progetto 2" class="img-fluid" />
+                                            <a href="images/project2.jpg" data-lightbox="projects" data-title="Project 2">
+                                                <img src="images/project2_thumb.jpg" alt="Preview Project 2" class="img-fluid" />
                                             </a>
-                                            <p>Un breve riepilogo del progetto 2.</p>
+                                            <p>A brief overview of project 2.</p>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <a href="images/progetto3.jpg" data-lightbox="projects" data-title="Progetto 3">
-                                                <img src="images/progetto3_thumb.jpg" alt="Anteprima Progetto 3" class="img-fluid" />
+                                            <a href="images/project3.jpg" data-lightbox="projects" data-title="Project 3">
+                                                <img src="images/project3_thumb.jpg" alt="Preview Project 3" class="img-fluid" />
                                             </a>
-                                            <p>Un breve riepilogo del progetto 3.</p>
+                                            <p>A brief overview of project 3.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>`;
-                        updateFooterMessage("Sezione attiva: Projects");
+                        updateFooterMessage("Active section: Projects");
                         break;
                     case 'skills':
-                            content.innerHTML = `
-                            <div class="mt-4 fadeIn text-center">
-                                <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
-                                    <h2>Competenze</h2>
-                                    <ul class='list-unstyled'>
-                                        <li>HTML & CSS</li>
-                                        <li>JavaScript</li>
-                                        <li>Bootstrap</li>
-                                        <li>SQL</li>
-                                        <li>Python</li>
-                                        <li>C# & C & C++</li>
-                                        <li>Java</li>
-                                        <li>Bash Unix</li>
-                                    </ul>
-                                </div>
-                            </div>`;
-                        updateFooterMessage("Sezione attiva: Skills");
+                        content.innerHTML = `
+                        <div class="mt-4 fadeIn text-center">
+                            <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
+                                <h2>Skills</h2>
+                                <ul class='list-unstyled'>
+                                    <li>HTML & CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Bootstrap</li>
+                                    <li>SQL</li>
+                                    <li>Python</li>
+                                    <li>C# C C++</li>
+                                    <li>Java</li>
+                                    <li>Bash Unix</li>
+                                </ul>
+                            </div>
+                        </div>`;
+                        updateFooterMessage("Active section: Skills");
                         break;
                     case 'contact':
                         content.innerHTML = `
                             <div class="mt-4 fadeIn text-center">
                                 <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
-                                    <h2>Contattami</h2>
-                                    <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Apri Modulo di Contatto</button>
+                                    <h2>Contact Me</h2>
+                                    <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Open Contact Form</button>
                                 </div>
                             </div>`;
-                        updateFooterMessage("Sezione attiva: Contact");
+                        updateFooterMessage("Active section: Contact");
                         break;
                     default:
-                        content.innerHTML = "<p>Pagina non trovata.</p>";
-                        updateFooterMessage("Sezione attiva: Pagina non trovata");
-                }
+                        content.innerHTML = "<p>Page not found.</p>";
+                        updateFooterMessage("Active section: Page not found");
+                    }
 
-                content.classList.add('fadeIn'); // Mostra il contenuto con effetto
+                    
+                    content.classList.add('fadeIn'); // Show the content with effect
             }, 500);
         }
 
@@ -221,15 +210,15 @@
             document.getElementById('footer-message').textContent = message;
         }
 
-        // Validazione del form di contatto
+        // Contact form validation
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Previene l'invio del form
-            alert('Messaggio inviato!'); // Simula l'invio
-            this.reset(); // Resetta il form
-            document.getElementById('contactModal').modal('hide'); // Chiudi la modale
+            event.preventDefault(); // Prevents the form from submitting
+            alert('Message sent!'); // Simulates sending
+            this.reset(); // Resets the form
+            document.getElementById('contactModal').modal('hide'); // Closes the modal
         });
 
-        // Abilita smooth scroll per la navigazione
+        // Enable smooth scrolling for navigation
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function (event) {
                 event.preventDefault();
