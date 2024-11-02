@@ -148,12 +148,13 @@
                                     <p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>
                                 </div>
                             </div>`;
-                        updateFooterMessage("Sezione attiva: Chi sono");
+                        updateFooterMessage("Sezione attiva: About");
                         break;
                     case 'projects':
                         content.innerHTML = `
                             <div class="mt-4 fadeIn text-center">
                                 <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                                    <h2>Progetti</h2>
                                     <div class="row">
                                         <div class="col-md-4 mb-3">
                                             <a href="images/progetto1.jpg" data-lightbox="projects" data-title="Progetto 1">
@@ -176,27 +177,33 @@
                                     </div>
                                 </div>
                             </div>`;
-                        updateFooterMessage("Sezione attiva: Progetti");
+                        updateFooterMessage("Sezione attiva: Projects");
                         break;
                     case 'skills':
-                        content.innerHTML = 
-                            "<h2>Competenze</h2>" +
-                            "<ul class='list-unstyled'>" +
-                                "<li>HTML & CSS</li>" +
-                                "<li>JavaScript</li>" +
-                                "<li>Bootstrap & Responsive Design</li>" +
-                                "<li>React & Angular</li>" +
-                                "<li>PHP & MySQL</li>" +
-                            "</ul>";
-                        updateFooterMessage("Sezione attiva: Competenze");
-                        break;
-                    case 'testimonials':
-                        content.innerHTML = "<h2>Testimonianze</h2><p>Leggi le testimonianze di chi ha lavorato con me.</p>";
-                        updateFooterMessage("Sezione attiva: Testimonianze");
+                            content.innerHTML = `
+                            <div class="mt-4 fadeIn text-center">
+                                <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                                    <h2>Competenze</h2>
+                                    <ul class='list-unstyled'>
+                                        <li>HTML & CSS</li>
+                                        "<li>JavaScript</li>
+                                        "<li>Bootstrap & Responsive Design</li>
+                                        "<li>React & Angular</li>
+                                        "<li>PHP & MySQL</li>
+                                    </ul>
+                                </div>
+                            </div>`;
+                        updateFooterMessage("Sezione attiva: Skills");
                         break;
                     case 'contact':
-                        content.innerHTML = "<h2>Contattami</h2><button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Apri Modulo di Contatto</button>";
-                        updateFooterMessage("Sezione attiva: Contatti");
+                        content.innerHTML = `
+                            <div class="mt-4 fadeIn text-center">
+                                <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                                    <h2>Contattami</h2>
+                                    <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#contactModal'>Apri Modulo di Contatto</button>
+                                </div>
+                            </div>`;
+                        updateFooterMessage("Sezione attiva: Contact");
                         break;
                     default:
                         content.innerHTML = "<p>Pagina non trovata.</p>";
