@@ -1,15 +1,15 @@
-# Il mio sito web personale
+# My Website
 
-Benvenuto nel repository del mio sito web personale! 🎉
+Welcome to the repository of my personal website! 🎉
 
-Questo è un semplice sito statico creato con **HTML5** e **CSS3**. Il sito include una homepage, una sezione "Chi sono" e una pagina "Contatti".
+This is a simple static site built with **HTML5** and **CSS3**, featuring a homepage, an "About Me" section, and a "Contact" page.
 
-## Struttura del sito
+## Website Structure
 
-- **Home**: Una breve introduzione su di me e sui miei progetti.
-- **Chi sono**: Una descrizione di chi sono e delle mie passioni.
-- **Contatti**: I modi per contattarmi, inclusa l'email.
+- **Home**: A short introduction to my projects and background.
+- **About Me**: A description of my passions and experience.
+- **Contact**: Ways to reach me, including email.
 
-## Come visualizzare il sito
+## How to View the Site
 
-Puoi visitare il sito online all'indirizzo: https://asciosh.github.io/website/
+You can view the site online at: https://asciosh.github.io/website/
