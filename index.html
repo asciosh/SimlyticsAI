@@ -7,7 +7,7 @@
     <meta name="description" content="Personal portfolio showcasing my projects and skills in web development.">
     <meta name="keywords" content="portfolio, web developer, projects, skills">
     <meta name="author" content="Simone Ascione">
-    <title>Il mio sito</title>
+    <title>My Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -38,7 +38,7 @@
 
             <!-- Main Content -->
             <main class="col-md-10 col-sm-9">
-                <div id="content" class="mt-4 fadeIn text-center" role="main">
+                <div id="content" class="col-md-8 offset-md-2 mt-4 fadeIn text-center" role="main">
                     <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
                         <h2>Welcome to my portfolio!</h2>
                         <p>Select a section from the menu to explore my projects and skills.</p>
@@ -49,7 +49,7 @@
         </div>
 
         <footer class="container-fluid text-center py-4 mt-auto" id="footer">
-            <p>© <span id="year"></span> Simone Ascione Website - All rights reserved</p>
+            <p>© <span id="year"></span> Simone Ascione's Website - All rights reserved</p>
             <p id="footer-message">Active section: Home</p>
             <a href="https://www.linkedin.com/in/simone-ascione-4ab415296/" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/asciosh/website/tree/main" class="text-white"><i class="fab fa-github"></i></a>
@@ -201,7 +201,7 @@
                         updateFooterMessage("Active section: Page not found");
                     }
 
-                    
+
                     content.classList.add('fadeIn'); // Show the content with effect
             }, 500);
         }
