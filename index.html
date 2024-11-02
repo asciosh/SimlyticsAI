@@ -57,12 +57,6 @@
                         <button class="btn btn-success mt-3" onclick="loadPage('about')">Scopri di più su di me</button>
                     </div>
                 </div>
-                <div id="content" class="mt-4 fadeIn text-center" role="main">
-                    <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
-                        <h2>Benvenuti nel mio p2!</h2>
-                        <p>Seleziona una sezione dal menu per esplorare.</p>
-                    </div>
-                </div>
             </main>
         </div>
 
@@ -138,20 +132,24 @@
                 switch (page) {
                     case 'home':
                         //content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
-                        content.innerHTML = `<h2>Home</h2>
-                                            <p>Benvenuto nella homepage.</p>
-                                            <div class="mt-4 fadeIn text-center" role="main">
+                        content.innerHTML = `<div class="mt-4 fadeIn text-center" role="home">
                                                 <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
-                                                    <h2>Benvenuti nel mio portfolio!</h2>
-                                                    <p>Seleziona una sezione dal menu per esplorare.</p>
+                                                    <h2>Home</h2>
+                                                    <p>Benvenuto nella homepage!</p>
                                                 </div>
                                             </div>`;
                         updateFooterMessage("Sezione attiva: Home");
                         break;
                     case 'about':
-                        content.innerHTML = 
-                            "<h2>Chi sono</h2>" +
-                            "<p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>";
+                        //content.innerHTML = 
+                        //    "<h2>Chi sono</h2>" +
+                        //    "<p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>";
+                            content.innerHTML = "<div class="mt-4 fadeIn text-center" role="about">" + 
+                                                "<div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">" + 
+                                                    "<h2>Chi sono</h2>" + 
+                                                    "<p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>" +
+                                                "</div> " +
+                                            "</div>";
                         updateFooterMessage("Sezione attiva: Chi sono");
                         break;
                     case 'projects':
