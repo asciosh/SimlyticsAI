@@ -131,53 +131,51 @@
             setTimeout(() => {
                 switch (page) {
                     case 'home':
-                        //content.innerHTML = "<h2>Home</h2><p>Benvenuto nella homepage.</p>";
-                        content.innerHTML = `<div class="mt-4 fadeIn text-center">
-                                                <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
-                                                    <h2>Home</h2>
-                                                    <p>Benvenuto nella homepage!</p>
-                                                </div>
-                                            </div>`;
+                        content.innerHTML = `
+                            <div class="mt-4 fadeIn text-center">
+                                <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                                    <h2>Home</h2>
+                                    <p>Benvenuto nella homepage!</p>
+                                </div>
+                            </div>`;
                         updateFooterMessage("Sezione attiva: Home");
                         break;
                     case 'about':
-                        //content.innerHTML = 
-                        //    "<h2>Chi sono</h2>" +
-                        //    "<p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>";
-                            content.innerHTML = `<div class="mt-4 fadeIn text-center">
-                                                <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
-                                                    <h2>Chi sono</h2>
-                                                    <p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>
-                                                </div>
-                                            </div>`;
+                        content.innerHTML = `
+                            <div class="mt-4 fadeIn text-center">
+                                <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
+                                    <h2>Chi sono</h2>
+                                    <p>Sono un appassionato di sviluppo web e ho creato questo sito per condividere un po' di me.</p>
+                                </div>
+                            </div>`;
                         updateFooterMessage("Sezione attiva: Chi sono");
                         break;
                     case 'projects':
-                        content.innerHTML =  
-                            `<div class="mt-4 fadeIn text-center">
+                        content.innerHTML = `
+                            <div class="mt-4 fadeIn text-center">
                                 <div class="text-center p-5" style="background: #f0f0f0; border-radius: 10px;">
-                                    <div class='row'>
-                                        <div class='col-md-4 mb-3'>
-                                            <a href='images/progetto1.jpg' data-lightbox='projects' data-title='Progetto 1'>
-                                                <images src='images/progetto1_thumb.jpg' alt='Anteprima Progetto 1' class='images-fluid' />
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <a href="images/progetto1.jpg" data-lightbox="projects" data-title="Progetto 1">
+                                                <img src="images/progetto1_thumb.jpg" alt="Anteprima Progetto 1" class="img-fluid" />
                                             </a>
                                             <p>Un breve riepilogo del progetto 1.</p>
                                         </div>
-                                        <div class='col-md-4 mb-3'>
-                                            <a href='images/progetto2.jpg' data-lightbox='projects' data-title='Progetto 2'>
-                                                <images src='images/progetto2_thumb.jpg' alt='Anteprima Progetto 2' class='images-fluid' />
+                                        <div class="col-md-4 mb-3">
+                                            <a href="images/progetto2.jpg" data-lightbox="projects" data-title="Progetto 2">
+                                                <img src="images/progetto2_thumb.jpg" alt="Anteprima Progetto 2" class="img-fluid" />
                                             </a>
                                             <p>Un breve riepilogo del progetto 2.</p>
                                         </div>
-                                        <div class='col-md-4 mb-3'>
-                                            <a href='images/progetto3.jpg' data-lightbox='projects' data-title='Progetto 3'>
-                                                <images src='images/progetto3_thumb.jpg' alt='Anteprima Progetto 3' class='images-fluid' />
+                                        <div class="col-md-4 mb-3">
+                                            <a href="images/progetto3.jpg" data-lightbox="projects" data-title="Progetto 3">
+                                                <img src="images/progetto3_thumb.jpg" alt="Anteprima Progetto 3" class="img-fluid" />
                                             </a>
                                             <p>Un breve riepilogo del progetto 3.</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;         
+                            </div>`;
                         updateFooterMessage("Sezione attiva: Progetti");
                         break;
                     case 'skills':
