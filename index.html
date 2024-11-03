@@ -24,14 +24,9 @@
         <button class="btn btn-success mt-3" onclick="loadPage('projects')">Explore Projects</button>
 
 
-        
-        <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
         <!-- Pulsante hamburger con Font Awesome -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i> <!-- Icona hamburger -->
+        <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="navbar-toggler-icon"></i> <!-- Icona hamburger -->
         </button>
     </header>
 
@@ -39,8 +34,8 @@
     <div class="container-fluid d-flex flex-column min-vh-100">
         <div class="row flex-grow-1">
 
-            <!-- Sidebar mobile -->
-            <nav class="collapse d-md-none" id="mobileSidebar">
+            <!-- Sidebar Desktop -->
+            <nav class="col-md-2 col-sm-3 sidebar" aria-label="Main navigation">
                 <ul class="nav flex-column">
                     <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">About</a></li>
@@ -51,8 +46,8 @@
                 </ul>
             </nav>
 
-            <!-- Sidebar Desktop -->
-            <nav class="col-md-2 col-sm-3 sidebar" aria-label="Main navigation">
+            <!-- Sidebar mobile -->
+            <nav class="collapse d-md-none" id="mobileSidebar">
                 <ul class="nav flex-column">
                     <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">About</a></li>
