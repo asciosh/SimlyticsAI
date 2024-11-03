@@ -227,7 +227,7 @@ button.btn:hover {
     .collapse.show {
         display: block; /* Show when toggled */
         height: auto; /* Auto height for the expanded state */
-        width: 100%; /* Ensure full width */
+        width: 50%; /* Ensure full width */
         padding: 10px 0; /* Padding for mobile sidebar */
         background-color: #343a40; /* Match sidebar background color */
         position: absolute; /* Ensure it overlays the content */
