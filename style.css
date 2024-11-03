@@ -6,6 +6,7 @@ body, h1, h2, h3, p, ul {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Light mode default styles */
 body {
     background-image: url('images/data-science-bg.jpg');
     background-attachment: fixed; /* Optional for parallax effect */
@@ -15,60 +16,29 @@ body {
     color: #333;
 }
 
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    color: white;
-}
-
 h1, h2, h3 {
     color: #333;
 }
 
 /* Modalità scura */
 body.dark-mode {
-    background-color: #121212;
-    color: #f5f5f5;
+    background-color: #121212; /* Dark background */
+    color: #f5f5f5; /* Light text */
 }
 
 body.dark-mode h1, 
 body.dark-mode h2, 
 body.dark-mode h3 {
-    color: #ffffff;
+    color: #ffffff; /* Light headings in dark mode */
 }
 
 body.dark-mode a {
-    color: #bb86fc;
-}
-
-/* Contenitore principale */
-.container-fluid {
-    padding: 0;
-}
-
-header {
-    background-color: #28a745; 
-    color: white;
-    padding: 40px 0;
-}
-
-header h1 {
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.25rem;
-}
-
-header button {
-    font-size: 1.1rem;
-    padding: 10px 20px;
+    color: #bb86fc; /* Link color in dark mode */
 }
 
 /* Sidebar */
 .sidebar {
-    background-color: #343a40;
+    background-color: #343a40; /* Dark sidebar */
     height: 100vh;
     width: 200px;
     padding: 20px 0;
@@ -76,7 +46,7 @@ header button {
 }
 
 .sidebar .nav-link {
-    color: #fff;
+    color: #fff; /* Light sidebar text */
     font-weight: bold;
     padding: 15px;
     text-align: center;
@@ -84,11 +54,11 @@ header button {
 }
 
 .sidebar .nav-link:hover {
-    background-color: #28a745; 
+    background-color: #28a745; /* Hover effect */
 }
 
 .sidebar .nav-link.active {
-    background-color: #28a745; 
+    background-color: #28a745; /* Active link color */
 }
 
 /* Main content */
@@ -106,19 +76,6 @@ main h2 {
 main p {
     font-size: 1.1rem;
     margin-bottom: 15px;
-}
-
-.fadeIn {
-    animation: fadeIn 1s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 /* Footer */
@@ -146,11 +103,25 @@ main p {
 
 /* Modalità scura per il footer */
 body.dark-mode #footer {
-    background-color: #333;
+    background-color: #1e1e1e; /* Dark footer */
 }
 
 body.dark-mode #footer a {
-    color: #bb86fc;
+    color: #bb86fc; /* Link color in dark mode footer */
+}
+
+/* Fade In Animation */
+.fadeIn {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Pulsante Modalità Scura/Chiara */
@@ -161,15 +132,10 @@ body.dark-mode #footer a {
 }
 
 #toggleTheme:hover {
-    color: #ddd;
+    color: #ddd; /* Hover effect for toggle button */
 }
 
-/* Animazione smooth scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Pulsante principale migliorato */
+/* Main button styles */
 button.btn {
     font-size: 1.1rem;
     padding: 10px 20px;
@@ -177,7 +143,7 @@ button.btn {
 }
 
 button.btn:hover {
-    background-color: #218838;
+    background-color: #218838; /* Hover effect */
     color: white;
 }
 
@@ -209,9 +175,8 @@ button.btn:hover {
 }
 
 .contact-form button:hover {
-    background: #218838;
+    background: #218838; /* Hover effect */
 }
-
 
 /* Sidebar adjustments on mobile */
 @media (max-width: 768px) {
