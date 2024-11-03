@@ -105,10 +105,6 @@
 
 
 
-
-
-
-
     <script>
         // Dynamic year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -219,22 +215,14 @@
             document.getElementById('footer-message').textContent = message;
         }
 
-        // Contact form validation
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the form from submitting
-            alert('Message sent!'); // Simulates sending
-            this.reset(); // Resets the form
-            document.getElementById('contactModal').modal('hide'); // Closes the modal
-        });
-
-        // Contact POST
+        // Contact form POST 
         document.getElementById('contactForm').addEventListener('submit', async function(event) {
-        event.preventDefault(); // Impedisce l'invio predefinito del form
+        event.preventDefault(); // Prevents the default form submission
         
         const formData = new FormData(this);
 
         try {
-            const response = await fetch('https://formspree.io/f/xkgnjpwz', {
+            const response = await fetch('https://formspree.io/f/meoqavgn', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: formData
@@ -242,7 +230,7 @@
 
             if (response.ok) {
                 alert('Message sent successfully!');
-                this.reset(); // Reset del form dopo l'invio
+                this.reset(); // Reset the form after sending the message
             } else {
                 alert('Failed to send message. Please try again.');
             }
