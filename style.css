@@ -215,12 +215,22 @@ button.btn:hover {
 
 /* Sidebar adjustments on mobile */
 @media (max-width: 768px) {
+    /* Assicurati che la classe o l'id qui utilizzato sia corretto */
     .sidebar {
-        display: none; /* Hide sidebar on mobile */
+        display: none; /* Nascondi la sidebar su mobile */
+    }
+
+    #mobileSidebar {
+        display: block; /* Assicurati che la sidebar mobile sia visibile */
+        height: auto;
+        width: 100%;
+        padding: 10px 0;
+        transition: all 0.3s ease; /* Aggiungi una transizione */
     }
 
     main {
-        width: 100%; /* Make main content take full width */
+        width: 100%; /* Fai in modo che il contenuto principale occupi tutta la larghezza */
+        padding: 10px; /* Padding per il main */
     }
 
     header, footer, .main-content, .contact-form {
@@ -233,16 +243,6 @@ button.btn:hover {
 
     header p, main p {
         font-size: 1rem;
-    }
-
-    .sidebar {
-        height: auto;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    main {
-        padding: 10px;
     }
 
     #footer {

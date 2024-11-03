@@ -274,7 +274,8 @@
 
                 // Collapse mobile menu after click (for mobile view)
                 if (window.innerWidth < 768) {
-                    document.getElementById('mobileSidebar').classList.remove('show');
+                    const sidebar = document.getElementById('mobileSidebar');
+                    sidebar.classList.remove('show'); // This will close the sidebar
                 }
             });
         });
