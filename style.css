@@ -69,12 +69,10 @@ header button {
 /* Sidebar */
 .sidebar {
     background-color: #343a40;
-    height: 100vh; /* Assicurati che questa sia impostata correttamente */
+    height: 100vh;
     width: 200px;
-    padding: 20px 0; /* Potresti voler rimuovere il padding per vedere se risolve il problema */
+    padding: 20px 0;
     position: sticky;
-    top: 0; /* Aggiungi questo per assicurarti che rimanga attaccata in cima */
-    z-index: 1000; /* Assicurati che sia sopra gli altri contenuti */
 }
 
 .sidebar .nav-link {
