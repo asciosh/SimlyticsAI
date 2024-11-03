@@ -21,11 +21,29 @@
         <h1>Welcome to my site!</h1>
         <p>Discover my projects and skills in web development.</p>
         <button class="btn btn-success mt-3" onclick="loadPage('projects')">Explore Projects</button>
+
+        <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </header>
 
+            
     <div class="container-fluid d-flex flex-column min-vh-100">
         <div class="row flex-grow-1">
-            <!-- Sidebar -->
+
+            <!-- Sidebar mobile -->
+            <nav class="collapse d-md-none" id="mobileSidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">About</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
+                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>
+                </ul>
+            </nav>
+
+            <!-- Sidebar Desktop -->
             <nav class="col-md-2 col-sm-3 sidebar" aria-label="Main navigation">
                 <ul class="nav flex-column">
                     <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
@@ -33,11 +51,9 @@
                     <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
                     <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
-                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link" onclick="loadPage('home')">🌓 Dark Mode</a></li>
+                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>
                 </ul>
             </nav>
-
-
 
             <!-- Main Content -->
             <main class="col-md-10 col-sm-9">

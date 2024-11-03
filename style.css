@@ -233,6 +233,19 @@ button.btn:hover {
         z-index: 1000; /* Ensure it is on top of other elements */
     }
 
+    /* Stili per la sidebar mobile */
+    .collapse {
+        background-color: #343a40; /* Colore di sfondo della sidebar mobile */
+    }
+
+    .collapse .nav-link {
+        color: white; /* Colore del testo */
+    }
+
+    .collapse .nav-link:hover {
+        background-color: #28a745; /* Colore di sfondo al passaggio del mouse */
+    }
+
     main {
         width: 100%; /* Make main content take full width */
         padding: 10px; /* Padding for main content */
