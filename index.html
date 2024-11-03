@@ -33,7 +33,7 @@
                     <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
                     <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
-                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>
+                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>    
                 </ul>
             </nav>
 
@@ -50,7 +50,7 @@
                     <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
                     <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
-                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>
+                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li> 
                 </ul>
             </nav>
 
@@ -218,11 +218,13 @@
                             </div>`;
                         updateFooterMessage("Active section: Contact");
                         break;
+                    case 'toggleTheme': // Add this case to handle theme toggle
+                        // Do nothing here, as the theme is handled separately
+                        break;
                     default:
                         content.innerHTML = "<p>Page not found.</p>";
                         updateFooterMessage("Active section: Page not found");
                     }
-
 
                     content.classList.add('fadeIn'); // Show the content with effect
             }, 500);
