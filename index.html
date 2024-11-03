@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -22,12 +21,6 @@
         <h1>Welcome to my site!</h1>
         <p>Discover my projects and skills in web development.</p>
         <button class="btn btn-success mt-3" onclick="loadPage('projects')">Explore Projects</button>
-
-
-        <!-- Pulsante hamburger con Font Awesome -->
-        <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="navbar-toggler-icon"></i> <!-- Icona hamburger -->
-        </button>
     </header>
 
             
@@ -36,18 +29,6 @@
 
             <!-- Sidebar Desktop -->
             <nav class="col-md-2 col-sm-3 sidebar" aria-label="Main navigation">
-                <ul class="nav flex-column">
-                    <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">About</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
-                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>
-                </ul>
-            </nav>
-
-            <!-- Sidebar mobile -->
-            <nav class="collapse d-md-none" id="mobileSidebar">
                 <ul class="nav flex-column">
                     <li class="nav-item"><a href="#home" class="nav-link" onclick="loadPage('home')">Home</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link" onclick="loadPage('about')">About</a></li>
