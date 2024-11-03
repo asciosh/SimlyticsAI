@@ -215,37 +215,43 @@ button.btn:hover {
 
 /* Sidebar adjustments on mobile */
 @media (max-width: 768px) {
-    /* Assicurati che la classe o l'id qui utilizzato sia corretto */
     .sidebar {
-        display: none; /* Nascondi la sidebar su mobile */
+        display: none; /* Hide sidebar on mobile */
     }
 
+    /* Ensure mobile sidebar is displayed when toggled */
     #mobileSidebar {
-        display: block; /* Assicurati che la sidebar mobile sia visibile */
+        display: block; /* Ensure mobile sidebar is visible */
         height: auto;
         width: 100%;
         padding: 10px 0;
-        transition: all 0.3s ease; /* Aggiungi una transizione */
+        background-color: #343a40; /* Match sidebar background color */
+        position: absolute; /* Make sure it overlays the content */
+        z-index: 1000; /* Ensure it is on top of other elements */
     }
 
     main {
-        width: 100%; /* Fai in modo che il contenuto principale occupi tutta la larghezza */
-        padding: 10px; /* Padding per il main */
+        width: 100%; /* Make main content take full width */
+        padding: 10px; /* Padding for main content */
     }
 
-    header, footer, .main-content, .contact-form {
-        padding: 10px;
+    header, footer {
+        padding: 10px; /* Reduce padding on header and footer */
     }
 
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Smaller header font size */
     }
 
     header p, main p {
-        font-size: 1rem;
+        font-size: 1rem; /* Smaller paragraph font size */
     }
 
     #footer {
-        padding: 10px 0;
+        padding: 10px 0; /* Footer padding adjustment */
+    }
+
+    .navbar-toggler {
+        margin: 10px; /* Adjust button position for mobile */
     }
 }
