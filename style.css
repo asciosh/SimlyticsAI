@@ -42,15 +42,6 @@ body.dark-mode a {
     color: #bb86fc;
 }
 
-/* Modalità scura per il footer */
-body.dark-mode #footer {
-    background-color: #333;
-}
-
-body.dark-mode #footer a {
-    color: #bb86fc;
-}
-
 /* Contenitore principale */
 .container-fluid {
     padding: 0;
@@ -151,6 +142,15 @@ main p {
 
 #footer p {
     margin-bottom: 0;
+}
+
+/* Modalità scura per il footer */
+body.dark-mode #footer {
+    background-color: #333;
+}
+
+body.dark-mode #footer a {
+    color: #bb86fc;
 }
 
 /* Pulsante Modalità Scura/Chiara */
