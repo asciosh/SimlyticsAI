@@ -14,4 +14,4 @@ This is a dynamic static site built with **HTML5**, **CSS3**, and **JavaScript**
 
 ## How to View the Site
 
-You can view the site online at: https://asciosh.github.io/website/
+You can view the site online at: https://asciosh.github.io/web/
