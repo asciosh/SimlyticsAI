@@ -1,6 +1,6 @@
-# My Website
+# SimlyticsAI
 
-Welcome to the repository of my personal website! 🎉
+Welcome to the repository of SimlyticsAI! 🎉
 
 This is a dynamic static site built with **HTML5**, **CSS3**, and **JavaScript**, featuring a homepage, sections for "About Me", "Projects", "Skills", and a "Contact" page with a modal form.
 
@@ -14,4 +14,4 @@ This is a dynamic static site built with **HTML5**, **CSS3**, and **JavaScript**
 
 ## How to View the Site
 
-You can view the site online at: https://asciosh.github.io/web/
+You can view the site online at: https://asciosh.github.io/SimlyticsAI/
