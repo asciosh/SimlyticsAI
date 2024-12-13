@@ -34,7 +34,7 @@
                     <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
                     <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
-                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link">🌓 Dark Mode</a></li>
+                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link" onclick="loadPage('home')">🌓 Dark Mode</a></li>
                 </ul>
             </nav>
 
@@ -117,7 +117,6 @@
             document.body.classList.toggle('dark-mode');
             const isDarkMode = document.body.classList.contains('dark-mode');
             document.getElementById('toggleTheme').textContent = isDarkMode ? '🌞 Light Mode' : '🌓 Dark Mode';
-            loadPage('home'); // try
         });
         
 
