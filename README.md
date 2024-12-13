@@ -6,8 +6,7 @@ This is a dynamic static site built with **HTML5**, **CSS3**, and **JavaScript**
 
 ## Website Structure
 
-- **Home**: An introduction to my projects and skills.
-- **About Me**: Insights into my background and passion for web development.
+- **Home**: Insights into my background and passion for web development.
 - **Projects**: Showcases various projects with images and descriptions.
 - **Skills**: Lists technical skills and programming languages.
 - **Contact**: A modal form to reach me directly via email.
