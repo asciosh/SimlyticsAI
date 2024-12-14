@@ -91,6 +91,13 @@ header button {
     background-color: #28a745; 
 }
 
+/* Buttons */
+.sidebar .nav-link.btn {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
 /* Main content */
 main {
     padding: 20px;
