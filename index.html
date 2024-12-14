@@ -34,8 +34,7 @@
                     <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
                     <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
-                    <li class="nav-item"><a href="javascript:void(0)" id="toggleTheme" class="nav-link">🌓 Dark Mode</a>
-                    </li>
+                    <li class="nav-item"><button id="toggleTheme" class="nav-link">🌓 Dark Mode</button></li>
                 </ul>
             </nav>
 
@@ -113,13 +112,11 @@
 
         
         // Dark mode function
-        document.getElementById('toggleTheme').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default link behavior
+        document.getElementById('toggleTheme').addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
             const isDarkMode = document.body.classList.contains('dark-mode');
             document.getElementById('toggleTheme').textContent = isDarkMode ? '🌞 Light Mode' : '🌓 Dark Mode';
         });
-        
 
         // Dynamic page loading
         function loadPage(page) {
