@@ -34,7 +34,7 @@
                     <li class="nav-item"><a href="#projects" class="nav-link" onclick="loadPage('projects')">Projects</a></li>
                     <li class="nav-item"><a href="#skills" class="nav-link" onclick="loadPage('skills')">Skills</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link" onclick="loadPage('contact')">Contact</a></li>
-                    <li class="nav-item"><a href="#" id="toggleTheme" class="nav-link" onclick="loadPage('toggleTheme')">🌓 Dark Mode</a></li>
+                    <li class="nav-item"><a href="#toggleTheme" id="toggleTheme" class="nav-link" onclick="loadPage('toggleTheme')">🌓 Dark Mode</a></li>
                 </ul>
             </nav>
 
@@ -138,6 +138,11 @@
                         updateFooterMessage("Active section: Home");
                         break;
                     case 'projects':
+                        /*
+                        <a href="images/project1.jpg" data-lightbox="projects" data-title="Project 1">
+                            <img src="images/project1_thumb.jpg" alt="Preview Project 1" class="img-fluid" />
+                        </a>
+                        */
                         content.innerHTML = `
                             <div class="mt-4 fadeIn text-center">
                                 <div class="text-center p-5" style="background: #2e8b57; border-radius: 10px;">
@@ -145,19 +150,16 @@
                                     <div class="row">
                                         <div class="col-md-4 mb-3">
                                             <a href="images/project1.jpg" data-lightbox="projects" data-title="Project 1">
-                                                <img src="images/project1_thumb.jpg" alt="Preview Project 1" class="img-fluid" />
                                             </a>
                                             <p>A brief overview of project 1.</p>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <a href="images/project2.jpg" data-lightbox="projects" data-title="Project 2">
-                                                <img src="images/project2_thumb.jpg" alt="Preview Project 2" class="img-fluid" />
                                             </a>
                                             <p>A brief overview of project 2.</p>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <a href="images/project3.jpg" data-lightbox="projects" data-title="Project 3">
-                                                <img src="images/project3_thumb.jpg" alt="Preview Project 3" class="img-fluid" />
                                             </a>
                                             <p>A brief overview of project 3.</p>
                                         </div>
